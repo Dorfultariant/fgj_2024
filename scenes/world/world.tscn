@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn4hqehqchtlc"]
+[gd_scene load_steps=4 format=3 uid="uid://bn4hqehqchtlc"]
 
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="1_1ebq7"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
+[ext_resource type="PackedScene" uid="uid://bvvl3p4ru1epe" path="res://scenes/characters/BlueBall.tscn" id="3_7t6po"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2i7cf")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_1ebq7")
+
+[node name="BlueBall" parent="." instance=ExtResource("3_7t6po")]
+position = Vector2(-932, 194)
