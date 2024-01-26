@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn4hqehqchtlc"]
+
+[ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="1_1ebq7"]
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_2i7cf")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ebq7")
