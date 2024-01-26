@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvvl3p4ru1epe"]
+
+[ext_resource type="Texture2D" uid="uid://50dov6vwj4mm" path="res://resources/characters/two_by_two_balls_of_blue.png" id="1_qc667"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wh7sg"]
+
+[node name="BlueBall" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(11.1505, 11.0282)
+shape = SubResource("CircleShape2D_wh7sg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qc667")
