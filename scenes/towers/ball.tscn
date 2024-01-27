@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbwbmnpuftryw"]
+
+[ext_resource type="Texture2D" uid="uid://50dov6vwj4mm" path="res://resources/characters/two_by_two_balls_of_blue.png" id="1_5cd3o"]
+[ext_resource type="Script" path="res://scenes/towers/ball.gd" id="1_jcloa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_que26"]
+
+[node name="Ball" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_jcloa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5cd3o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(10.8182, 10.8571)
+shape = SubResource("CircleShape2D_que26")
+
+[node name="SelfDestruct" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="SelfDestruct" to="." method="_on_self_destruct_timeout"]

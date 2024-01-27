@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://1fukwd4ufasx"]
+
+[ext_resource type="PackedScene" uid="uid://bn4hqehqchtlc" path="res://scenes/world/world.tscn" id="1_q64lu"]
+[ext_resource type="Texture2D" uid="uid://cqn86whr4ww16" path="res://resources/background/level4.png" id="2_7md36"]
+[ext_resource type="PackedScene" uid="uid://b6wq3sws73ioq" path="res://scenes/areas/finnish_line.tscn" id="3_x1ng7"]
+
+[sub_resource type="Curve2D" id="Curve2D_uctco"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -974, 355, 0, 0, 0, 0, -769, 248, 0, 0, 0, 0, -540, 74, 0, 0, 0, 0, -421, 48, 0, 0, 0, 0, -214, -240, 0, 0, 0, 0, -7, -374, 0, 0, 0, 0, 171, -400, 0, 0, 0, 0, 333, -400, 0, 0, 0, 0, 441, -322, 0, 0, 0, 0, 483, -258, 0, 0, 0, 0, 572, -119, 0, 0, 0, 0, 746, -42, 0, 0, 0, 0, 809, -30, 0, 0, 0, 0, 888, 18, 0, 0, 0, 0, 973, 43, 0, 0, 0, 0, 1089, 5)
+}
+point_count = 16
+
+[sub_resource type="Curve2D" id="Curve2D_c0vk6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -975, 334, 0, 0, 0, 0, -640, 151, 0, 0, 0, 0, -493, 54, 0, 0, 0, 0, -409, 57, 0, 0, 0, 0, -292, -147, 0, 0, 0, 0, -82, -113, 0, 0, 0, 0, 164, -42, 0, 0, 0, 0, 363, -51, 0, 0, 0, 0, 551, -131, 0, 0, 0, 0, 743, -42, 0, 0, 0, 0, 868, 18, 0, 0, 0, 0, 984, 50, 0, 0, 0, 0, 1145, 3)
+}
+point_count = 13
+
+[sub_resource type="Curve2D" id="Curve2D_dbqna"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -974, 344, 0, 0, 0, 0, -597, 118, 0, 0, 0, 0, -458, 45, 0, 0, 0, 0, -333, 139, 0, 0, 0, 0, -258, 250, 0, 0, 0, 0, -175, 360, 0, 0, 0, 0, -59, 417, 0, 0, 0, 0, 105, 433, 0, 0, 0, 0, 271, 406, 0, 0, 0, 0, 441, 344, 0, 0, 0, 0, 720, 182, 0, 0, 0, 0, 810, 103, 0, 0, 0, 0, 876, 23, 0, 0, 0, 0, 936, 20, 0, 0, 0, 0, 1181, 17)
+}
+point_count = 15
+
+[node name="Level_1" instance=ExtResource("1_q64lu")]
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource("2_7md36")
+
+[node name="Route" type="Path2D" parent="Routes" index="0"]
+curve = SubResource("Curve2D_uctco")
+
+[node name="Route_1" type="Path2D" parent="Routes" index="1"]
+position = Vector2(5, -2)
+curve = SubResource("Curve2D_c0vk6")
+
+[node name="Route_2" type="Path2D" parent="Routes" index="2"]
+position = Vector2(1, 0)
+curve = SubResource("Curve2D_dbqna")
+
+[node name="Camera2D" parent="." index="2"]
+zoom = Vector2(0.6, 0.6)
+
+[node name="TelebattiesTimer" type="Timer" parent="." index="3"]
+wait_time = 0.4
+autostart = true
+
+[node name="TowerPositions" type="Node2D" parent="." index="4"]
+
+[node name="Marker2D" type="Marker2D" parent="TowerPositions" index="0"]
+position = Vector2(859, 229)
+
+[node name="Marker2D2" type="Marker2D" parent="TowerPositions" index="1"]
+position = Vector2(730, -196)
+
+[node name="Marker2D3" type="Marker2D" parent="TowerPositions" index="2"]
+position = Vector2(541, -383)
+
+[node name="Marker2D4" type="Marker2D" parent="TowerPositions" index="3"]
+position = Vector2(226, 297)
+
+[node name="Marker2D5" type="Marker2D" parent="TowerPositions" index="4"]
+position = Vector2(251, 76)
+
+[node name="Marker2D6" type="Marker2D" parent="TowerPositions" index="5"]
+position = Vector2(-40, 40)
+
+[node name="Marker2D7" type="Marker2D" parent="TowerPositions" index="6"]
+position = Vector2(-63, 312)
+
+[node name="Marker2D8" type="Marker2D" parent="TowerPositions" index="7"]
+position = Vector2(-74, -232)
+
+[node name="Marker2D9" type="Marker2D" parent="TowerPositions" index="8"]
+position = Vector2(-114, -449)
+
+[node name="Marker2D10" type="Marker2D" parent="TowerPositions" index="9"]
+position = Vector2(-312, -313)
+
+[node name="Marker2D11" type="Marker2D" parent="TowerPositions" index="10"]
+position = Vector2(-238, -1)
+
+[node name="Marker2D12" type="Marker2D" parent="TowerPositions" index="11"]
+position = Vector2(-501, -96)
+
+[node name="Marker2D13" type="Marker2D" parent="TowerPositions" index="12"]
+position = Vector2(-842, 150)
+
+[node name="TeleBatSpawnTimer" parent="." index="5"]
+autostart = true
+
+[node name="FinnishLine" parent="." index="6" instance=ExtResource("3_x1ng7")]
+position = Vector2(1002, 22)
+
+[node name="Towers" type="Node2D" parent="." index="7"]
+
+[connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
+[connection signal="TeleBatGotIn" from="FinnishLine" to="." method="_on_finnish_line_tele_bat_got_in"]

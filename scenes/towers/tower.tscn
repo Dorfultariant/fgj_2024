@@ -24,13 +24,7 @@ texture = ExtResource("1_7wrwm")
 scale = Vector2(5.4, 9.2)
 shape = SubResource("CircleShape2D_xfevo")
 
-[node name="Marker2DRight" type="Marker2D" parent="."]
-position = Vector2(71.6667, 60)
-
-[node name="Marker2DLeft" type="Marker2D" parent="."]
-position = Vector2(68.3333, -50)
-
-[node name="Ammunition" type="Node" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="ThrowTimer" to="." method="_on_throw_timer_timeout"]

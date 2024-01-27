@@ -21,7 +21,7 @@ func _process(delta):
 
 
 func _on_button_down():
-	Globals.telebatties_queue.append(Globals.TELETATTIES.RED)
+	Globals.instructiion_list.append(Globals.TELEBATTIES.RED)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nx0oq"]
@@ -43,7 +43,7 @@ func _process(delta):
 
 
 func _on_button_down():
-	Globals.telebatties_queue.append(Globals.TELETATTIES.PURPLE)
+	Globals.instructiion_list.append(Globals.TELEBATTIES.PURPLE)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujn8w"]
@@ -65,7 +65,7 @@ func _process(delta):
 
 
 func _on_button_down():
-	Globals.telebatties_queue.append(Globals.TELETATTIES.BLUE)
+	Globals.instructiion_list.append(Globals.TELEBATTIES.BLUE)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7nnef"]
@@ -87,7 +87,7 @@ func _process(delta):
 
 
 func _on_button_down():
-	Globals.telebatties_queue.append(Globals.TELETATTIES.YELLOW)
+	Globals.instructiion_list.append(Globals.TELEBATTIES.YELLOW)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tftf6"]
@@ -109,7 +109,7 @@ func _process(delta):
 
 
 func _on_button_down():
-	Globals.telebatties_queue.append(Globals.TELETATTIES.BROWN)
+	Globals.instructiion_list.append(Globals.TELEBATTIES.BROWN)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr8j6"]
@@ -131,7 +131,7 @@ func _process(delta):
 
 
 func _on_button_down():
-	Globals.telebatties_queue.append(Globals.TELETATTIES.CYAN)
+	Globals.instructiion_list.append(Globals.TELEBATTIES.CYAN)
 "
 
 [node name="LevelTelebattiesAddUi" type="Control"]
