@@ -5,6 +5,7 @@ var telebatties_scene: PackedScene = preload("res://scenes/characters/telebattie
 var speed : int = 200
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(Globals.telebatties_queue)
 	var telebatties = telebatties_scene.instantiate() # Replace with function body.
 	$Route/Teletubbies.add_child(telebatties)
 	

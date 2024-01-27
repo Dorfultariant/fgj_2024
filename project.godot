@@ -15,6 +15,10 @@ run/main_scene="res://scenes/world/world.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://globals/globals.gd"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
