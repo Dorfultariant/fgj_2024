@@ -1,24 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn4hqehqchtlc"]
+[gd_scene load_steps=2 format=3 uid="uid://bn4hqehqchtlc"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
-
-[sub_resource type="Curve2D" id="Curve2D_ru10x"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1078, 201, 0, 0, 0, 0, -900, 192, 0, 0, 0, 0, -753, 167, 0, 0, 0, 0, -495, 387, 0, 0, 0, 0, -407, 427, 0, 0, 0, 0, -286, 444, 0, 0, 0, 0, 8, 435, 0, 0, 0, 0, 186, 418, 0, 0, 0, 0, 353, 350, 0, 0, 0, 0, 478, 254, 0, 0, 0, 0, 582, 144, 0, 0, 0, 0, 642, 96, 0, 0, 0, 0, 730, 36, 0, 0, 0, 0, 1089, 5)
-}
-point_count = 14
-
-[sub_resource type="Curve2D" id="Curve2D_0f5kk"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1121, 199, 0, 0, 0, 0, -754, 153, 0, 0, 0, 0, -512, -232, 0, 0, 0, 0, -373, -339, 0, 0, 0, 0, -213, -360, 0, 0, 0, 0, 26, -368, 0, 0, 0, 0, 161, -339, 0, 0, 0, 0, 318, -268, 0, 0, 0, 0, 390, -172, 0, 0, 0, 0, 475, -33, 0, 0, 0, 0, 589, 32, 0, 0, 0, 0, 1145, 3)
-}
-point_count = 12
-
-[sub_resource type="Curve2D" id="Curve2D_lfrxr"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1203, 210, 0, 0, 0, 0, -715, 138, 0, 0, 0, 0, -590, 110, 0, 0, 0, 0, -444, 113, 0, 0, 0, 0, -355, 71, 0, 0, 0, 0, -245, -33, 0, 0, 0, 0, -152, -33, 0, 0, 0, 0, -77, 64, 0, 0, 0, 0, -49, 146, 0, 0, 0, 0, 47, 156, 0, 0, 0, 0, 144, 74, 0, 0, 0, 0, 215, -22, 0, 0, 0, 0, 261, -33, 0, 0, 0, 0, 350, 14, 0, 0, 0, 0, 471, 56, 0, 0, 0, 0, 1181, 17)
-}
-point_count = 16
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2i7cf")
@@ -27,23 +9,8 @@ script = ExtResource("1_2i7cf")
 
 [node name="Routes" type="Node2D" parent="."]
 
-[node name="Route" type="Path2D" parent="Routes"]
-curve = SubResource("Curve2D_ru10x")
-
-[node name="Route_1" type="Path2D" parent="Routes"]
-curve = SubResource("Curve2D_0f5kk")
-
-[node name="Route_2" type="Path2D" parent="Routes"]
-curve = SubResource("Curve2D_lfrxr")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TeleBatSpawnTimer" type="Timer" parent="."]
 
-<<<<<<< HEAD
-[node name="LevelTelebattiesAddUi" parent="." instance=ExtResource("2_cvjhj")]
-visible = false
-
-=======
->>>>>>> 7ca1458 (hotfixes)
 [connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]
