@@ -5,6 +5,8 @@ enum TELETATTIES {
 	suotana	
 }
 
+var telebatties_queue = Array()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
