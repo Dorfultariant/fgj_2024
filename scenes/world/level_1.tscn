@@ -14,4 +14,72 @@ zoom = Vector2(0.6, 0.6)
 [node name="TelebattiesTimer" type="Timer" parent="." index="3"]
 wait_time = 4.0
 
+[node name="Node2D" type="Node2D" parent="." index="4"]
+
+[node name="Marker2D" type="Marker2D" parent="Node2D" index="0"]
+position = Vector2(-848, 76)
+
+[node name="Marker2D2" type="Marker2D" parent="Node2D" index="1"]
+position = Vector2(-755, 307)
+
+[node name="Marker2D3" type="Marker2D" parent="Node2D" index="2"]
+position = Vector2(-668, -232)
+
+[node name="Marker2D4" type="Marker2D" parent="Node2D" index="3"]
+position = Vector2(-433, 25)
+
+[node name="Marker2D5" type="Marker2D" parent="Node2D" index="4"]
+position = Vector2(-552, 201)
+
+[node name="Marker2D6" type="Marker2D" parent="Node2D" index="5"]
+position = Vector2(-509, -396)
+
+[node name="Marker2D7" type="Marker2D" parent="Node2D" index="6"]
+position = Vector2(-348, -218)
+
+[node name="Marker2D8" type="Marker2D" parent="Node2D" index="7"]
+position = Vector2(-320, -453)
+
+[node name="Marker2D9" type="Marker2D" parent="Node2D" index="8"]
+position = Vector2(-82, -455)
+
+[node name="Marker2D10" type="Marker2D" parent="Node2D" index="9"]
+position = Vector2(-136, -269)
+
+[node name="Marker2D11" type="Marker2D" parent="Node2D" index="10"]
+position = Vector2(-214, 68)
+
+[node name="Marker2D12" type="Marker2D" parent="Node2D" index="11"]
+position = Vector2(-240, 328)
+
+[node name="Marker2D13" type="Marker2D" parent="Node2D" index="12"]
+position = Vector2(20, 57)
+
+[node name="Marker2D14" type="Marker2D" parent="Node2D" index="13"]
+position = Vector2(116, -257)
+
+[node name="Marker2D15" type="Marker2D" parent="Node2D" index="14"]
+position = Vector2(224, -144)
+
+[node name="Marker2D16" type="Marker2D" parent="Node2D" index="15"]
+position = Vector2(31, 351)
+
+[node name="Marker2D17" type="Marker2D" parent="Node2D" index="16"]
+position = Vector2(221, 286)
+
+[node name="Marker2D18" type="Marker2D" parent="Node2D" index="17"]
+position = Vector2(393, 159)
+
+[node name="Marker2D19" type="Marker2D" parent="Node2D" index="18"]
+position = Vector2(376, -53)
+
+[node name="Marker2D20" type="Marker2D" parent="Node2D" index="19"]
+position = Vector2(314, -401)
+
+[node name="Marker2D21" type="Marker2D" parent="Node2D" index="20"]
+position = Vector2(506, -215)
+
+[node name="Marker2D22" type="Marker2D" parent="Node2D" index="21"]
+position = Vector2(755, 189)
+
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]

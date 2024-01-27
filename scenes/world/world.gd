@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Route/RoutedObjects.progress += speed * delta
-	
+
 
 
 func _on_telebatties_timer_timeout():

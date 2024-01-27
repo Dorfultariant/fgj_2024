@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abwti"]
 
 [node name="Telebatties" type="CharacterBody2D"]
+collision_mask = 15
 script = ExtResource("1_f2c4k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

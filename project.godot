@@ -20,6 +20,14 @@ config/icon="res://icon.svg"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[layer_names]
+
+2d_physics/layer_1="Telebatties"
+2d_physics/layer_2="Towers"
+2d_physics/layer_3="Projectiles"
+2d_physics/layer_4="Mines"
+2d_physics/layer_5="Objects"
+
 [rendering]
 
 renderer/rendering_method="mobile"
