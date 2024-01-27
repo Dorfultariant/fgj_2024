@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6wq3sws73ioq"]
+
+[ext_resource type="Script" path="res://scenes/areas/finnish_line.gd" id="1_kkv6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh20w"]
+
+[node name="FinnishLine" type="Area2D"]
+script = ExtResource("1_kkv6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.96, 3.48)
+shape = SubResource("RectangleShape2D_mh20w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
