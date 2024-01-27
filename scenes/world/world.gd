@@ -2,10 +2,14 @@ extends Node2D
 class_name WORLD
 
 var telebatties_scene: PackedScene = preload("res://scenes/characters/telebatties.tscn")
+var tower_scene: PackedScene = preload("res://scenes/towers/tower.tscn")
 var follow_paths_list = []
 var speed : int = 200
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var tower = tower_scene.instantiate()
+	tower.position = $TowerPositions/Marker2D.global_position
+	$Towers.add_child(tower)
 	for i in range(20):
 		var telebatties = telebatties_scene.instantiate()
 		telebatties.set_parameters(randi_range(0,5), randi_range(0,2))

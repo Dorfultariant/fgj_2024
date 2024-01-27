@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0vj1dnkr4quv"]
+
+[ext_resource type="Texture2D" uid="uid://50dov6vwj4mm" path="res://resources/characters/two_by_two_balls_of_blue.png" id="1_loobs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qjqhk"]
+
+[node name="Control" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+text = "Koeteksti"
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_loobs")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer"]
+layout_mode = 2
+text = "Koeteksti"
+label_settings = SubResource("LabelSettings_qjqhk")
+
+[node name="TextureRect" type="TextureRect" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_loobs")
+
+[node name="Control" type="Control" parent="VSplitContainer"]
+layout_mode = 2
