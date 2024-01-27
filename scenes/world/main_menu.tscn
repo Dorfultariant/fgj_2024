@@ -6,8 +6,8 @@
 script/source = "extends Button
 
 func _on_pressed():
-	queue_free()
 	Globals.level_manager()
+	queue_free()
 "
 
 [node name="main_menu" type="Node2D"]

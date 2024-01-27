@@ -57,8 +57,9 @@ func level_manager():
 			while !ready_for_wave:
 				pass
 			wave_begin()
-			while false:
+			while !is_level_cleared:
 				pass
+			is_level_cleared = false
 			ready_for_wave = false
 			update_player_alive()
 			if !player_is_alive:
@@ -84,7 +85,7 @@ func update_player_alive():
 				player_is_alive = true
 
 func player_lost():
-	pass
+	get_tree().root.add_child(preload("res://scenes/world/lose_screen.tscn").instantiate())
 	
 func player_won():
 	pass
