@@ -1,7 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpg3x1ldcw100"]
 
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="1_t6mi3"]
-[ext_resource type="Script" path="res://scenes/world/start_button.gd" id="2_fy3kx"]
+
+[sub_resource type="GDScript" id="GDScript_ag78v"]
+script/source = "extends Button
+
+var simultanious_scene = preload(\"res://scenes/world/level_1.tscn\").instantiate()
+
+func _on_pressed():
+	Globals.player_balance = Globals.player_starting_balance
+	Globals.ai_balance = Globals.ai_starting_balance
+	get_tree().root.add_child(simultanious_scene)
+	queue_free()
+"
 
 [node name="main_menu" type="Node2D"]
 
@@ -23,7 +34,7 @@ grow_vertical = 2
 scale = Vector2(5, 5)
 action_mode = 0
 text = "START"
-script = ExtResource("2_fy3kx")
+script = SubResource("GDScript_ag78v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
