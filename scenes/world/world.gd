@@ -5,7 +5,7 @@ var telebatties_scene: PackedScene = preload("res://scenes/characters/telebattie
 var tower_scene: PackedScene = preload("res://scenes/towers/tower.tscn")
 var follow_paths_list = []
 var speed : int = 200
-var tower_positions = $TowerPositions.get_children()
+#var tower_positions = $TowerPositions.get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
