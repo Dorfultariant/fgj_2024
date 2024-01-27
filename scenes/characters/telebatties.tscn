@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://h56p40b64572"]
+[gd_scene load_steps=4 format=3 uid="uid://cedekayyep34s"]
 
 [ext_resource type="Script" path="res://scenes/characters/telebatties.gd" id="1_f2c4k"]
+[ext_resource type="Texture2D" uid="uid://dp1a75ko2n6r0" path="res://resources/characters/telebatties.png" id="2_m6tpf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abwti"]
 
 [node name="Telebatties" type="CharacterBody2D"]
 script = ExtResource("1_f2c4k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m6tpf")
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.86293, 5.56661)
+shape = SubResource("CapsuleShape2D_abwti")

@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://tuhblkqqsjyh"]
+[gd_scene load_steps=3 format=3 uid="uid://bn4hqehqchtlc"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
 
+[sub_resource type="Curve2D" id="Curve2D_ru10x"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1078, 201, 0, 0, 0, 0, -900, 192, 0, 0, 0, 0, -778, 150, 0, 0, 0, 0, -693, 34, 0, 0, 0, 0, -603, -99, 0, 0, 0, 0, -495, -269, 0, 0, 0, 0, -396, -317, 0, 0, 0, 0, -266, -360, 0, 0, 0, 0, -85, -385, 0, 0, 0, 0, 56, -360, 0, 0, 0, 0, 223, -340, 0, 0, 0, 0, 373, -232, 0, 0, 0, 0, 450, -102, 0, 0, 0, 0, 520, -12, 0, 0, 0, 0, 619, 42, 0, 0, 0, 0, 1004, 11, 0, 0, 0, 0, 1089, 5)
+}
+point_count = 17
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_2i7cf")
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Route" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ru10x")
+
+[node name="RoutedObjects" type="PathFollow2D" parent="Route"]
+position = Vector2(-1078, 201)
+rotation = -0.0505188
+
+[node name="Telebatties" type="Node2D" parent="Route/RoutedObjects"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
