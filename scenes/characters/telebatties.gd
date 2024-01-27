@@ -6,7 +6,7 @@ var speed : int = 200
 var path : int = 0
 var cost : int = 0
 
-	
+
 func set_parameters(new_type, new_path):
 	type = new_type
 	$Sprite2D.frame = type
@@ -39,5 +39,13 @@ func set_parameters(new_type, new_path):
 func _process(delta):
 	if health <= 0:
 		Globals.ai_balance += Globals.ai_balance_gained_per_telebattie_killed
+		for follower in Globals.follow_paths_list:
+			var children = follower.get_children()
+			if self in children:
+				Globals.follow_paths_list.erase(follower)
 		queue_free()
 	
+func hit(amount):
+	if health > 0:
+		health -= amount
+		
