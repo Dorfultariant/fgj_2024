@@ -21,3 +21,7 @@ position = Vector2(-1078, 201)
 rotation = -0.0505188
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TeleBatSpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]
