@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://n5b18i3uoerj"]
+[gd_scene load_steps=5 format=3 uid="uid://n5b18i3uoerj"]
 
 [ext_resource type="PackedScene" uid="uid://bn4hqehqchtlc" path="res://scenes/world/world.tscn" id="1_kwbdo"]
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="2_o8af1"]
+
+[sub_resource type="Curve2D" id="Curve2D_g6c0i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1112, 212, 0, 0, 0, 0, -758, 130, 0, 0, 0, 0, -642, -63, 0, 0, 0, 0, -535, -210, 0, 0, 0, 0, -422, -303, 0, 0, 0, 0, -241, -354, 0, 0, 0, 0, -74, -376, 0, 0, 0, 0, 102, -374, 0, 0, 0, 0, 223, -323, 0, 0, 0, 0, 345, -241, 0, 0, 0, 0, 444, -99, 0, 0, 0, 0, 540, 5, 0, 0, 0, 0, 690, 25, 0, 0, 0, 0, 1193, 5)
+}
+point_count = 14
+
+[sub_resource type="Curve2D" id="Curve2D_k0mig"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1157, 226, 0, 0, 0, 0, -719, 147, 0, 0, 0, 0, -580, 127, 0, 0, 0, 0, -456, 104, 0, 0, 0, 0, -382, 85, 0, 0, 0, 0, -275, -23, 0, 0, 0, 0, -193, -37, 0, 0, 0, 0, -116, -14, 0, 0, 0, 0, -40, 147, 0, 0, 0, 0, 42, 144, 0, 0, 0, 0, 121, 85, 0, 0, 0, 0, 237, -14, 0, 0, 0, 0, 283, -34, 0, 0, 0, 0, 373, 31, 0, 0, 0, 0, 560, 53, 0, 0, 0, 0, 1298, -14)
+}
+point_count = 16
 
 [node name="Level_1" instance=ExtResource("1_kwbdo")]
 
@@ -81,5 +93,19 @@ position = Vector2(506, -215)
 
 [node name="Marker2D22" type="Marker2D" parent="Node2D" index="21"]
 position = Vector2(755, 189)
+
+[node name="Route_1" type="Path2D" parent="." index="5"]
+curve = SubResource("Curve2D_g6c0i")
+
+[node name="Teletubbies" type="PathFollow2D" parent="Route_1" index="0"]
+position = Vector2(-1112, 212)
+rotation = -0.227624
+
+[node name="Route_2" type="Path2D" parent="." index="6"]
+curve = SubResource("Curve2D_k0mig")
+
+[node name="Teletubbies" type="PathFollow2D" parent="Route_2" index="0"]
+position = Vector2(-1157, 226)
+rotation = -0.178447
 
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
