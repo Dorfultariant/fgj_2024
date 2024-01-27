@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cb6qprmyxiwiv"]
+
+[ext_resource type="Texture2D" uid="uid://dp1a75ko2n6r0" path="res://resources/characters/telebatties.png" id="1_xowue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjp22"]
+atlas = ExtResource("1_xowue")
+region = Rect2(0, 0, 262.629, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx0oq"]
+atlas = ExtResource("1_xowue")
+region = Rect2(256.048, 0, 266.931, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujn8w"]
+atlas = ExtResource("1_xowue")
+region = Rect2(505.246, 0, 281.754, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nnef"]
+atlas = ExtResource("1_xowue")
+region = Rect2(774, 0, 256.963, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tftf6"]
+atlas = ExtResource("1_xowue")
+region = Rect2(1026.49, 0, 244, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr8j6"]
+atlas = ExtResource("1_xowue")
+region = Rect2(1282.51, 0, 253.495, 256)
+
+[node name="LevelTelebattiesAddUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="red_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_jjp22")
+
+[node name="purple_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_nx0oq")
+
+[node name="blue_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_ujn8w")
+
+[node name="yellow_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_7nnef")
+
+[node name="brown_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_tftf6")
+
+[node name="cyan_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_fr8j6")
