@@ -25,7 +25,8 @@ texture = ExtResource("2_o8af1")
 zoom = Vector2(0.6, 0.6)
 
 [node name="TelebattiesTimer" type="Timer" parent="." index="3"]
-wait_time = 4.0
+wait_time = 0.4
+autostart = true
 
 [node name="Node2D" type="Node2D" parent="." index="4"]
 
@@ -108,6 +109,10 @@ curve = SubResource("Curve2D_k0mig")
 [node name="Teletubbies" type="PathFollow2D" parent="Route_2" index="0"]
 position = Vector2(-1157, 226)
 rotation = -0.178447
+
+[node name="TeleBatSpawnTimer" parent="." index="7"]
+wait_time = 0.5
+autostart = true
 
 [node name="FinnishLine" parent="." index="8" instance=ExtResource("3_vogp0")]
 position = Vector2(1013, 20)
