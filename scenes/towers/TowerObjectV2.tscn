@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bss6s2w1si3lf"]
+
+[ext_resource type="Script" path="res://scenes/towers/TowerObjectV2.gd" id="1_2hooc"]
+[ext_resource type="Texture2D" uid="uid://wwjog5tagyu8" path="res://resources/characters/PilkottuApina/UnFunyMonkeHandless.png" id="2_hv6re"]
+[ext_resource type="Texture2D" uid="uid://1sacyliijpl3" path="res://resources/characters/PilkottuApina/UnFunyMonkeRight.png" id="3_1ya4c"]
+[ext_resource type="Texture2D" uid="uid://dreuq1kyq0wn2" path="res://resources/characters/PilkottuApina/UnFunyMonkeLeftHand.png" id="4_5gmvn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5ro"]
+size = Vector2(66, 137)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05fve"]
+
+[node name="TowerObjectV2" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_2hooc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture = ExtResource("2_hv6re")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_ca5ro")
+
+[node name="MarkerLeftHand2" type="Marker2D" parent="."]
+position = Vector2(38, -58)
+
+[node name="MarkerRightHand2" type="Marker2D" parent="."]
+position = Vector2(38, 58)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture = ExtResource("3_1ya4c")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+texture = ExtResource("4_5gmvn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(70, 69.79)
+shape = SubResource("CircleShape2D_05fve")
+
+[node name="AmmunitionHolder" type="Node" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
