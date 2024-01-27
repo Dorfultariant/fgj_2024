@@ -1,13 +1,12 @@
 extends CharacterBody2D
-class_name TELE
 
-
-var type
+var type : int = Globals.TELEBATTIES.BLUE
 var health : int = 0
+var speed : int = 200
+var path : int = 0
 
 func _ready():
-	type = "red"
 	health = 100
-
+	
 
 
