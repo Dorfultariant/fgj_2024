@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn4hqehqchtlc"]
+[gd_scene load_steps=5 format=3 uid="uid://bn4hqehqchtlc"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
-[ext_resource type="PackedScene" uid="uid://nbj6x5d1eeso" path="res://scenes/world/level_telebatties_add_ui.tscn" id="2_cvjhj"]
 
 [sub_resource type="Curve2D" id="Curve2D_ru10x"]
 _data = {
@@ -41,7 +40,10 @@ curve = SubResource("Curve2D_lfrxr")
 
 [node name="TeleBatSpawnTimer" type="Timer" parent="."]
 
+<<<<<<< HEAD
 [node name="LevelTelebattiesAddUi" parent="." instance=ExtResource("2_cvjhj")]
 visible = false
 
+=======
+>>>>>>> 7ca1458 (hotfixes)
 [connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]
