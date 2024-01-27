@@ -1,11 +1,17 @@
 extends Area2D
+
 var body_list = []
 var target_body
+var canShoot = false
 const RELOADTIME = 1.2
 var loadTime = RELOADTIME
 # Called when the node enters the scene tree for the first time.
 var trashScene = preload("res://scenes/characters/trash.tscn")
 signal trashThrow(pos, dir)
+
+func _init():
+
+	pass
 
 func _ready():
 	pass
@@ -19,8 +25,12 @@ func _process(delta):
 	if target_body != null: 
 		look_at(target_body.global_position)
 		if loadTime <= 0:
-			throwTrash(target_body)
 			loadTime = RELOADTIME
+			canShoot = true
+		else:
+			canShoot = false
+	else:
+		canShoot = false
 	loadTime = loadTime - delta
 	
 
@@ -30,8 +40,4 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	body_list.erase(body)
 
-func throwTrash(target_body):
-	if randi_range(0, 1) == 1:
-		trashThrow.emit($Marker2DRight.global_position, (target_body.global_position - $Marker2DRight.global_position).normalized() )
-	else:
-		trashThrow.emit($Marker2DLeft.global_position, (target_body.global_position - $Marker2DLeft.global_position).normalized() )
+

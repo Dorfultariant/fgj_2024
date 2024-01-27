@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://n5b18i3uoerj"]
+[gd_scene load_steps=5 format=3 uid="uid://n5b18i3uoerj"]
 
 [ext_resource type="PackedScene" uid="uid://bn4hqehqchtlc" path="res://scenes/world/world.tscn" id="1_kwbdo"]
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="2_o8af1"]
 [ext_resource type="PackedScene" uid="uid://b6wq3sws73ioq" path="res://scenes/areas/finnish_line.tscn" id="3_vogp0"]
+[ext_resource type="PackedScene" uid="uid://bss6s2w1si3lf" path="res://scenes/towers/TowerObjectV2.tscn" id="4_a17tg"]
 
 [node name="Level_1" instance=ExtResource("1_kwbdo")]
 
@@ -90,7 +91,14 @@ autostart = true
 [node name="FinnishLine" parent="." index="6" instance=ExtResource("3_vogp0")]
 position = Vector2(1114, 18)
 
-[node name="Towers" type="Node2D" parent="." index="8"]
+[node name="TowerObjectV2" parent="." index="7" instance=ExtResource("4_a17tg")]
+position = Vector2(-595, 188)
+
+[node name="TowerObjectV3" parent="." index="8" instance=ExtResource("4_a17tg")]
+position = Vector2(-58, -105)
+
+[node name="TowerObjectV4" parent="." index="9" instance=ExtResource("4_a17tg")]
+position = Vector2(-240, 169)
 
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
 [connection signal="TeleBatGotIn" from="FinnishLine" to="." method="_on_finnish_line_tele_bat_got_in"]

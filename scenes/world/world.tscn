@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn4hqehqchtlc"]
+[gd_scene load_steps=5 format=3 uid="uid://bn4hqehqchtlc"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
-[ext_resource type="PackedScene" uid="uid://nbj6x5d1eeso" path="res://scenes/world/level_telebatties_add_ui.tscn" id="2_cvjhj"]
-[ext_resource type="PackedScene" uid="uid://lbsvqgsigphu" path="res://scenes/towers/tower.tscn" id="3_noc0c"]
 
 [sub_resource type="Curve2D" id="Curve2D_ru10x"]
 _data = {
@@ -42,12 +40,4 @@ curve = SubResource("Curve2D_lfrxr")
 
 [node name="TeleBatSpawnTimer" type="Timer" parent="."]
 
-[node name="LevelTelebattiesAddUi" parent="." instance=ExtResource("2_cvjhj")]
-visible = false
-
-[node name="Tower" parent="." instance=ExtResource("3_noc0c")]
-
-[node name="Ammunition" type="Node2D" parent="."]
-
 [connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]
-[connection signal="trashThrow" from="Tower" to="." method="_on_tower_trash_throw"]

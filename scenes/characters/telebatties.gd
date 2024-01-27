@@ -36,3 +36,5 @@ func set_parameters(new_type, new_path):
 		speed = 175
 		cost = 140
 	
+func hit():
+	queue_free()
