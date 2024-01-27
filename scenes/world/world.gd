@@ -7,9 +7,10 @@ var speed : int = 200
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(20):
-		var telebatties = telebatties_scene.instantiate() # Replace with function body.
+		var telebatties = telebatties_scene.instantiate()
+		telebatties.set_parameters(randi_range(0,5), randi_range(0,2))
 		Globals.telebatties_queue.append(telebatties)
-		print(Globals.telebatties_queue.size())
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for follower in follow_paths_list:
@@ -22,8 +23,10 @@ func _on_telebatties_timer_timeout():
 func _on_tele_bat_spawn_timer_timeout():
 	if Globals.telebatties_queue:
 		var newFollowPath = PathFollow2D.new()
-		newFollowPath.add_child(Globals.telebatties_queue.pop_at(0))
-		$Route.add_child(newFollowPath)
+		var popped = Globals.telebatties_queue.pop_at(0)
+		newFollowPath.add_child(popped)
+		var routes = $Routes.get_children()
+		routes[popped.path].add_child(newFollowPath)
 		follow_paths_list.append(newFollowPath)
 		print("New child appears")
 
