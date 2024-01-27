@@ -6,7 +6,8 @@ enum TELEBATTIES {
 	BLUE,
 	YELLOW,
 	BROWN,
-	CYAN	
+	CYAN,
+	NYAN	
 }
 
 var telebatties_queue = Array()
