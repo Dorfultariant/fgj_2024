@@ -50,7 +50,7 @@ func level_manager():
 	current_lap = 1
 	player_balance = player_starting_balance
 	ai_balance = ai_starting_balance
-	
+	se
 	while player_is_alive && current_level <= number_of_levels:
 		while player_is_alive && current_lap <= number_of_laps:
 			store_menu()

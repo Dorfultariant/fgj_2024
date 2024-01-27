@@ -9,12 +9,13 @@ var speed : int = 500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Starting balances
-	Globals.ai_balance = Globals.ai_starting_balane
+	Globals.ai_balance = Globals.ai_starting_balance
 	Globals.player_balance = Globals.player_starting_balance
 	var positionMarkers = $TowerPositions.get_children()
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
-		var towerPos = positionMarkers[randi_range(0, positionMarkers.size())]
+		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()-1)]
+		
 		# Remove from possible tower positions so two towers dont stack
 		positionMarkers.erase(towerPos)
 		tower.position = towerPos.global_position
@@ -29,16 +30,15 @@ func _ready():
 			telebatties.set_parameters(i, randi_range(0,2))
 			Globals.telebatties_queue.append(telebatties)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for follower in Globals.follow_paths_list:
 		#print("Mach speed: ",follower.get_child(0).speed)
 		follower.progress += follower.get_child(0).speed * delta 
 	if Globals.player_score == Globals.player_level_clearance:
 		Globals.is_level_cleared = true
+
 func _on_telebatties_timer_timeout():
 	pass
-
 
 func _on_tele_bat_spawn_timer_timeout():
 	if Globals.telebatties_queue:
