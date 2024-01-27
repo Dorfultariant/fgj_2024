@@ -15,5 +15,7 @@ var instructiion_list = Array()
 
 const player_starting_balance = 1000
 const ai_starting_balane = 1000
+const ai_balance_gained_per_telebattie_killed = 100
+
 var player_balance = 0
 var ai_balance = 0
