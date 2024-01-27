@@ -1,0 +1,179 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4lohjfbu5jh1"]
+
+[ext_resource type="Script" path="res://GameMenuUI.gd" id="1_fpovc"]
+[ext_resource type="Script" path="res://scenes/world/gameMenuUI.gd" id="1_y8xdo"]
+[ext_resource type="Texture2D" uid="uid://0r7bhg7vdnvw" path="res://resources/characters/telebattiesRED.png" id="3_g3gje"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufxxq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8xdo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+script = ExtResource("1_fpovc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.525
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.200012
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ufxxq")
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.253
+anchor_bottom = 0.166
+offset_right = -0.456024
+offset_bottom = -0.128002
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.258
+anchor_right = 0.656
+anchor_bottom = 1.0
+offset_left = -0.216003
+offset_right = 0.287964
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g3gje")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.667
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.384033
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADD TELEBATTIE"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton2" type="OptionButton" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.195
+anchor_right = 0.056
+anchor_bottom = 0.295
+offset_top = -0.0600014
+offset_right = -0.512001
+offset_bottom = 0.139992
+metadata/_edit_use_anchors_ = true
+
+[node name="money_textEdit" type="TextEdit" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.922
+anchor_right = 0.056
+anchor_bottom = 1.0
+offset_top = 0.0239868
+offset_right = -0.512001
+grow_vertical = 0
+
+[node name="ItemList" type="Panel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.526
+offset_bottom = 0.151978
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item1" type="TextureRect" parent="ColorRect/ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.167
+anchor_bottom = 1.0
+offset_right = -0.384018
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item2" type="TextureRect" parent="ColorRect/ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.168
+anchor_right = 0.334
+anchor_bottom = 1.0
+offset_left = -0.536011
+offset_right = 0.231964
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item3" type="TextureRect" parent="ColorRect/ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.384003
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item4" type="TextureRect" parent="ColorRect/ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.667
+anchor_bottom = 1.0
+offset_right = -0.384033
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item5" type="TextureRect" parent="ColorRect/ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.667
+anchor_top = -0.00293255
+anchor_right = 0.833
+anchor_bottom = 0.997
+offset_left = -0.384033
+offset_right = 0.383911
+offset_bottom = 0.0229797
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item6" type="TextureRect" parent="ColorRect/ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833
+anchor_top = -0.00293255
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_left = 0.383911
+offset_bottom = 0.0229797
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="item_selected" from="ColorRect/Panel/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="ColorRect/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="item_focused" from="ColorRect/Panel/OptionButton2" to="." method="_on_option_button_2_item_focused"]
+[connection signal="item_selected" from="ColorRect/Panel/OptionButton2" to="." method="_on_option_button_2_item_selected"]
