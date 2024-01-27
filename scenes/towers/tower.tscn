@@ -1,45 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://lbsvqgsigphu"]
+[gd_scene load_steps=8 format=3 uid="uid://lbsvqgsigphu"]
 
-[ext_resource type="Script" path="res://scenes/towers/TowerObjectV2.gd" id="1_35m8j"]
-[ext_resource type="Texture2D" uid="uid://d2clhh8147vjp" path="res://resources/characters/PilkottuApina/UnFunyMonkeHandless.png" id="2_4s6ws"]
-[ext_resource type="Texture2D" uid="uid://btsvipm8wwuyu" path="res://resources/characters/PilkottuApina/UnFunyMonkeLeftHand.png" id="3_bl5x4"]
-[ext_resource type="Texture2D" uid="uid://o4hcrmk8qajd" path="res://resources/characters/PilkottuApina/UnFunyMonkeRightHand.png" id="4_ngf4i"]
+[ext_resource type="Texture2D" uid="uid://483xpxhyppw6" path="res://resources/characters/PilkottuApina/UnFunyMonkeHeadless.png" id="1_lyyhh"]
+[ext_resource type="Script" path="res://scenes/towers/tower.gd" id="1_qbe5b"]
+[ext_resource type="Texture2D" uid="uid://d2clhh8147vjp" path="res://resources/characters/PilkottuApina/UnFunyMonkeHandless.png" id="2_2lum8"]
+[ext_resource type="Texture2D" uid="uid://btsvipm8wwuyu" path="res://resources/characters/PilkottuApina/UnFunyMonkeLeftHand.png" id="3_nuvee"]
+[ext_resource type="Texture2D" uid="uid://o4hcrmk8qajd" path="res://resources/characters/PilkottuApina/UnFunyMonkeRightHand.png" id="4_8qjj0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5ro"]
-size = Vector2(66, 137)
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqd8l"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_05fve"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2s4xx"]
 
-[node name="TowerObjectV2" type="Area2D"]
+[node name="Tower" type="Area2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_35m8j")
+script = ExtResource("1_qbe5b")
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-texture = ExtResource("2_4s6ws")
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("1_lyyhh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2.5)
-shape = SubResource("RectangleShape2D_ca5ro")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("CircleShape2D_uqd8l")
 
-[node name="MarkerLeftHand2" type="Marker2D" parent="."]
-position = Vector2(38, -58)
+[node name="Head" type="Sprite2D" parent="."]
+texture = ExtResource("2_2lum8")
 
-[node name="MarkerRightHand2" type="Marker2D" parent="."]
-position = Vector2(38, 58)
+[node name="Left" type="Sprite2D" parent="."]
+texture = ExtResource("3_nuvee")
 
-[node name="Sprite2D5" type="Sprite2D" parent="."]
-texture = ExtResource("3_bl5x4")
+[node name="Right" type="Sprite2D" parent="."]
+texture = ExtResource("4_8qjj0")
 
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-texture = ExtResource("4_ngf4i")
+[node name="DeathZone" type="Area2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+scale = Vector2(70, 70)
+shape = SubResource("CircleShape2D_2s4xx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(70, 69.79)
-shape = SubResource("CircleShape2D_05fve")
+[node name="MarkerLeftHand" type="Marker2D" parent="."]
+position = Vector2(74, -61)
+
+[node name="MarkerRightHand" type="Marker2D" parent="."]
+position = Vector2(72, 59)
 
 [node name="AmmunitionHolder" type="Node" parent="."]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
+[connection signal="body_exited" from="DeathZone" to="." method="_on_death_zone_body_exited"]

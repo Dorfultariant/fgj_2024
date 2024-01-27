@@ -12,7 +12,7 @@ func _ready():
 	Globals.ai_balance = Globals.ai_starting_balane
 	Globals.player_balance = Globals.player_starting_balance
 	var positionMarkers = $TowerPositions.get_children()
-	
+	print(positionMarkers)
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
 		var towerPos = positionMarkers[randi_range(0, positionMarkers.size())]
