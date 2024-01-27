@@ -11,4 +11,4 @@ enum TELEBATTIES {
 }
 
 var telebatties_queue = Array()
-
+var instructiion_list = Array()
