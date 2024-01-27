@@ -1,8 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4lohjfbu5jh1"]
 
-[ext_resource type="Script" path="res://GameMenuUI.gd" id="1_fpovc"]
 [ext_resource type="Script" path="res://scenes/world/gameMenuUI.gd" id="1_y8xdo"]
 [ext_resource type="Texture2D" uid="uid://0r7bhg7vdnvw" path="res://resources/characters/telebattiesRED.png" id="3_g3gje"]
+
+[sub_resource type="GDScript" id="GDScript_xb1is"]
+script/source = "extends ColorRect
+
+var color1 : Color = Color(1, 0, 0)
+var color2 : Color = Color(0, 0, 5)
+# Called when the node enters the scene tree for the first time.
+
+func _draw():
+	pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufxxq"]
 
@@ -23,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0705882, 0.0705882, 0.0705882, 1)
-script = ExtResource("1_fpovc")
+script = SubResource("GDScript_xb1is")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="ColorRect"]
