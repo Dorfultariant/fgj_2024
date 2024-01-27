@@ -7,8 +7,9 @@ script/source = "extends Button
 
 var simultanious_scene = preload(\"res://scenes/world/level_1.tscn\").instantiate()
 
-
 func _on_pressed():
+	Globals.player_balance = Globals.player_starting_balance
+	Globals.ai_balance = Globals.ai_starting_balance
 	get_tree().root.add_child(simultanious_scene)
 	queue_free()
 "

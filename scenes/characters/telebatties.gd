@@ -35,4 +35,8 @@ func set_parameters(new_type, new_path):
 		health = 160
 		speed = 175
 		cost = 140
+		
+func _process(delta):
+	if health <= 0:
+		queue_free()
 	
