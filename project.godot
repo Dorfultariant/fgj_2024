@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2d_anti_td"
+config/name="fgj24"
 run/main_scene="res://scenes/world/world.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
