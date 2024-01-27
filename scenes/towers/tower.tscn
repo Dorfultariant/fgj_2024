@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfevo"]
 
 [node name="Tower" type="Area2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_m731t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
