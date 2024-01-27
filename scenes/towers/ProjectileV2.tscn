@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvsei5ahpe6ow"]
+
+[ext_resource type="Script" path="res://scenes/towers/Projectile.gd" id="1_57et6"]
+[ext_resource type="Texture2D" uid="uid://bubxwneakwqyp" path="res://resources/characters/trash.png" id="2_oa4ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v015c"]
+size = Vector2(37, 56)
+
+[node name="Projectile" type="CharacterBody2D"]
+position = Vector2(76, 0)
+script = ExtResource("1_57et6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_oa4ig")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_v015c")
