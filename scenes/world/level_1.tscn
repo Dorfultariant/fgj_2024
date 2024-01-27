@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://n5b18i3uoerj"]
 
 [ext_resource type="PackedScene" uid="uid://bn4hqehqchtlc" path="res://scenes/world/world.tscn" id="1_kwbdo"]
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="2_o8af1"]
 [ext_resource type="PackedScene" uid="uid://b6wq3sws73ioq" path="res://scenes/areas/finnish_line.tscn" id="3_vogp0"]
+[ext_resource type="PackedScene" uid="uid://bss6s2w1si3lf" path="res://scenes/towers/TowerObjectV2.tscn" id="4_a17tg"]
 
 [sub_resource type="Curve2D" id="Curve2D_uctco"]
 _data = {
@@ -32,6 +32,7 @@ curve = SubResource("Curve2D_uctco")
 
 [node name="Route_1" type="Path2D" parent="Routes" index="1"]
 curve = SubResource("Curve2D_c0vk6")
+var tower_scene: PackedScene = preload("res://scenes/towers/tower.tscn")
 
 [node name="Route_2" type="Path2D" parent="Routes" index="2"]
 curve = SubResource("Curve2D_dbqna")
@@ -115,10 +116,6 @@ position = Vector2(755, 189)
 autostart = true
 
 [node name="FinnishLine" parent="." index="6" instance=ExtResource("3_vogp0")]
-
-position = Vector2(1001, 22)
-
-[node name="Towers" type="Node2D" parent="." index="7"]
 
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
 [connection signal="TeleBatGotIn" from="FinnishLine" to="." method="_on_finnish_line_tele_bat_got_in"]

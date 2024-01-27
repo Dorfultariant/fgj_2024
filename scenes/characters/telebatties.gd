@@ -41,3 +41,5 @@ func _process(delta):
 		Globals.ai_balance += Globals.ai_balance_gained_per_telebattie_killed
 		queue_free()
 	
+func hit():
+	queue_free()
