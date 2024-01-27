@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4lohjfbu5jh1"]
+[gd_scene load_steps=6 format=3 uid="uid://c4lohjfbu5jh1"]
 
 [ext_resource type="Script" path="res://scenes/world/gameMenuUI.gd" id="1_y8xdo"]
 [ext_resource type="Texture2D" uid="uid://0r7bhg7vdnvw" path="res://resources/characters/telebattiesRED.png" id="3_g3gje"]
@@ -17,14 +17,32 @@ func _draw():
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufxxq"]
 
+[sub_resource type="GDScript" id="GDScript_rswu6"]
+script/source = "extends Button
+
+
+
+
+func _on_button_down():
+	Globals.ready_for_wave = true
+	queue_free()
+"
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -574.0
+offset_top = -342.0
+offset_right = -574.0
+offset_bottom = -342.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_y8xdo")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -56,6 +74,7 @@ anchor_right = 0.253
 anchor_bottom = 0.166
 offset_right = -0.456024
 offset_bottom = -0.128002
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/Panel"]
 layout_mode = 1
@@ -102,6 +121,17 @@ anchor_bottom = 1.0
 offset_top = 0.0239868
 offset_right = -0.512001
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitbButton" type="Button" parent="ColorRect/Panel"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 259.0
+offset_right = 279.0
+offset_bottom = 290.0
+text = "Exit
+"
+script = SubResource("GDScript_rswu6")
 
 [node name="ItemList" type="Panel" parent="ColorRect"]
 layout_mode = 1
@@ -184,7 +214,11 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 328)
+
 [connection signal="item_selected" from="ColorRect/Panel/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="ColorRect/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="item_focused" from="ColorRect/Panel/OptionButton2" to="." method="_on_option_button_2_item_focused"]
 [connection signal="item_selected" from="ColorRect/Panel/OptionButton2" to="." method="_on_option_button_2_item_selected"]
+[connection signal="button_down" from="ColorRect/Panel/ExitbButton" to="ColorRect/Panel/ExitbButton" method="_on_button_down"]
