@@ -35,4 +35,9 @@ func set_parameters(new_type, new_path):
 		health = 160
 		speed = 175
 		cost = 140
+		
+func _process(delta):
+	if health <= 0:
+		Globals.ai_balance += Globals.ai_balance_gained_per_telebattie_killed
+		queue_free()
 	
