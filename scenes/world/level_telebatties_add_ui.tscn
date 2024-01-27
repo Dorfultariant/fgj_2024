@@ -142,50 +142,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
 
-[node name="red_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="red_telebattie_button" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_jjp22")
 script = SubResource("GDScript_moqr2")
 
-[node name="purple_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+[node name="purple_telebattie_button" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_nx0oq")
 script = SubResource("GDScript_huplh")
 
-[node name="blue_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+[node name="blue_telebattie_button" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_ujn8w")
 script = SubResource("GDScript_cs788")
 
-[node name="yellow_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+[node name="yellow_telebattie_button" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_7nnef")
 script = SubResource("GDScript_02ln8")
 
-[node name="brown_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+[node name="brown_telebattie_button" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_tftf6")
 script = SubResource("GDScript_v2wu1")
 
-[node name="cyan_telebattie_button" type="TextureButton" parent="HBoxContainer"]
+[node name="cyan_telebattie_button" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_fr8j6")
 script = SubResource("GDScript_132gf")
 
-[connection signal="button_down" from="HBoxContainer/red_telebattie_button" to="HBoxContainer/red_telebattie_button" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/purple_telebattie_button" to="HBoxContainer/purple_telebattie_button" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/blue_telebattie_button" to="HBoxContainer/blue_telebattie_button" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/yellow_telebattie_button" to="HBoxContainer/yellow_telebattie_button" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/brown_telebattie_button" to="HBoxContainer/brown_telebattie_button" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/cyan_telebattie_button" to="HBoxContainer/cyan_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/red_telebattie_button" to="MarginContainer/HBoxContainer/red_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/purple_telebattie_button" to="MarginContainer/HBoxContainer/purple_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/blue_telebattie_button" to="MarginContainer/HBoxContainer/blue_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/yellow_telebattie_button" to="MarginContainer/HBoxContainer/yellow_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/brown_telebattie_button" to="MarginContainer/HBoxContainer/brown_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/cyan_telebattie_button" to="MarginContainer/HBoxContainer/cyan_telebattie_button" method="_on_button_down"]

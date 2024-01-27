@@ -1,5 +1,6 @@
 extends Node2D
 class_name WORLD
+
 var telebatties_scene: PackedScene = preload("res://scenes/characters/telebatties.tscn")
 var follow_paths_list = []
 var speed : int = 200
@@ -12,7 +13,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for follower in follow_paths_list:
-		follower.progress += speed * delta
+		#print("Mach speed: ",follower.get_child(0).speed)
+		follower.progress += follower.get_child(0).speed * delta 
 
 func _on_telebatties_timer_timeout():
 	pass
@@ -28,4 +30,8 @@ func _on_tele_bat_spawn_timer_timeout():
 
 func _on_finnish_line_tele_bat_got_in(body):
 	print("Something got through...")
+	for follower in follow_paths_list:
+		var children = follower.get_children()
+		if body in children:
+			follow_paths_list.erase(follower)
 	body.queue_free()

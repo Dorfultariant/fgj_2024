@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn4hqehqchtlc"]
+[gd_scene load_steps=4 format=3 uid="uid://bn4hqehqchtlc"]
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
+[ext_resource type="PackedScene" uid="uid://nbj6x5d1eeso" path="res://scenes/world/level_telebatties_add_ui.tscn" id="2_cvjhj"]
 
 [sub_resource type="Curve2D" id="Curve2D_ru10x"]
 _data = {
@@ -23,5 +24,7 @@ rotation = -0.0505188
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TeleBatSpawnTimer" type="Timer" parent="."]
+
+[node name="LevelTelebattiesAddUi" parent="." instance=ExtResource("2_cvjhj")]
 
 [connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]
