@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://n5b18i3uoerj"]
+[gd_scene load_steps=4 format=3 uid="uid://n5b18i3uoerj"]
 
 [ext_resource type="PackedScene" uid="uid://bn4hqehqchtlc" path="res://scenes/world/world.tscn" id="1_kwbdo"]
-[ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="2_o8af1"]
 
 [sub_resource type="Curve2D" id="Curve2D_g6c0i"]
 _data = {
@@ -16,9 +15,6 @@ _data = {
 point_count = 16
 
 [node name="Level_1" instance=ExtResource("1_kwbdo")]
-
-[node name="Background" parent="." index="0"]
-texture = ExtResource("2_o8af1")
 
 [node name="Camera2D" parent="." index="2"]
 zoom = Vector2(0.6, 0.6)
