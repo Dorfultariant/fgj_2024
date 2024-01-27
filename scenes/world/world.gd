@@ -6,21 +6,18 @@ var speed : int = 200
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(20):
-		print(Globals.telebatties_queue)
 		var telebatties = telebatties_scene.instantiate() # Replace with function body.
 		Globals.telebatties_queue.append(telebatties)
-		print("A might warrior added")
-
+		print(Globals.telebatties_queue.size())
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for follower in follow_paths_list:
 		follower.progress += speed * delta
-		
+
 func _on_telebatties_timer_timeout():
 	pass
 
 func _on_tele_bat_spawn_timer_timeout():
-	print(Globals.telebatties_queue.pop_at(0))
 	if Globals.telebatties_queue:
 		var newFollowPath = PathFollow2D.new()
 		newFollowPath.add_child(Globals.telebatties_queue.pop_at(0))
@@ -31,4 +28,4 @@ func _on_tele_bat_spawn_timer_timeout():
 
 func _on_finnish_line_tele_bat_got_in(body):
 	print("Something got through...")
-	body.exit()
+	body.queue_free()

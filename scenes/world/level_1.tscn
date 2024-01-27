@@ -111,7 +111,6 @@ position = Vector2(-1157, 226)
 rotation = -0.178447
 
 [node name="TeleBatSpawnTimer" parent="." index="7"]
-wait_time = 0.5
 autostart = true
 
 [node name="FinnishLine" parent="." index="8" instance=ExtResource("3_vogp0")]
