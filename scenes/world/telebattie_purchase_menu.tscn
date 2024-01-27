@@ -1,0 +1,197 @@
+[gd_scene load_steps=14 format=3 uid="uid://8wm83frvophm"]
+
+[ext_resource type="Texture2D" uid="uid://dp1a75ko2n6r0" path="res://resources/characters/telebatties.png" id="1_krobn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce404"]
+atlas = ExtResource("1_krobn")
+region = Rect2(0, 0, 262.629, 256)
+
+[sub_resource type="GDScript" id="GDScript_8soyx"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_down():
+	Globals.instructiion_list.append(Globals.TELEBATTIES.RED)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gor0"]
+atlas = ExtResource("1_krobn")
+region = Rect2(256.048, 0, 266.931, 256)
+
+[sub_resource type="GDScript" id="GDScript_igm6t"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_down():
+	Globals.instructiion_list.append(Globals.TELEBATTIES.PURPLE)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia4ne"]
+atlas = ExtResource("1_krobn")
+region = Rect2(505.246, 0, 281.754, 256)
+
+[sub_resource type="GDScript" id="GDScript_1evye"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_down():
+	Globals.instructiion_list.append(Globals.TELEBATTIES.BLUE)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omob1"]
+atlas = ExtResource("1_krobn")
+region = Rect2(774, 0, 256.963, 256)
+
+[sub_resource type="GDScript" id="GDScript_lywfd"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_down():
+	Globals.instructiion_list.append(Globals.TELEBATTIES.YELLOW)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl6o4"]
+atlas = ExtResource("1_krobn")
+region = Rect2(1026.49, 0, 244, 256)
+
+[sub_resource type="GDScript" id="GDScript_1fjkm"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_down():
+	Globals.instructiion_list.append(Globals.TELEBATTIES.BROWN)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07nni"]
+atlas = ExtResource("1_krobn")
+region = Rect2(1282.51, 0, 253.495, 256)
+
+[sub_resource type="GDScript" id="GDScript_xjm6p"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_button_down():
+	Globals.instructiion_list.append(Globals.TELEBATTIES.CYAN)
+"
+
+[node name="TelebattiePurchaseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 162.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="red_telebattie_button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_ce404")
+script = SubResource("GDScript_8soyx")
+
+[node name="purple_telebattie_button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_8gor0")
+script = SubResource("GDScript_igm6t")
+
+[node name="blue_telebattie_button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_ia4ne")
+script = SubResource("GDScript_1evye")
+
+[node name="yellow_telebattie_button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_omob1")
+script = SubResource("GDScript_lywfd")
+
+[node name="brown_telebattie_button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_xl6o4")
+script = SubResource("GDScript_1fjkm")
+
+[node name="cyan_telebattie_button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_07nni")
+script = SubResource("GDScript_xjm6p")
+
+[connection signal="button_down" from="VBoxContainer/red_telebattie_button" to="VBoxContainer/red_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/purple_telebattie_button" to="VBoxContainer/purple_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/blue_telebattie_button" to="VBoxContainer/blue_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/yellow_telebattie_button" to="VBoxContainer/yellow_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/brown_telebattie_button" to="VBoxContainer/brown_telebattie_button" method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/cyan_telebattie_button" to="VBoxContainer/cyan_telebattie_button" method="_on_button_down"]
