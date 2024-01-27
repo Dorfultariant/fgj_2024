@@ -5,10 +5,8 @@ var damage = 50
 const RELOADTIME = 1.2
 var loadTime = RELOADTIME
 var trashScene = preload("res://scenes/characters/trash.tscn")
-# Called when the node enters the scene tree for the first time.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if body_list:
 		target_body = body_list[0]
@@ -21,10 +19,6 @@ func _process(delta):
 			throwTrash()
 			
 	loadTime = loadTime - delta
-	
-
-
-	
 
 
 func throwTrash():
