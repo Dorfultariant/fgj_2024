@@ -1,13 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://n5b18i3uoerj"]
+[gd_scene load_steps=7 format=3 uid="uid://n5b18i3uoerj"]
 
 [ext_resource type="PackedScene" uid="uid://bn4hqehqchtlc" path="res://scenes/world/world.tscn" id="1_kwbdo"]
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="2_o8af1"]
 [ext_resource type="PackedScene" uid="uid://b6wq3sws73ioq" path="res://scenes/areas/finnish_line.tscn" id="3_vogp0"]
 
+[sub_resource type="Curve2D" id="Curve2D_uctco"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1078, 201, 0, 0, 0, 0, -900, 192, 0, 0, 0, 0, -753, 167, 0, 0, 0, 0, -495, 387, 0, 0, 0, 0, -407, 427, 0, 0, 0, 0, -286, 444, 0, 0, 0, 0, 8, 435, 0, 0, 0, 0, 186, 418, 0, 0, 0, 0, 353, 350, 0, 0, 0, 0, 478, 254, 0, 0, 0, 0, 582, 144, 0, 0, 0, 0, 642, 96, 0, 0, 0, 0, 730, 36, 0, 0, 0, 0, 1089, 5)
+}
+point_count = 14
+
+[sub_resource type="Curve2D" id="Curve2D_c0vk6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1121, 199, 0, 0, 0, 0, -754, 153, 0, 0, 0, 0, -512, -232, 0, 0, 0, 0, -373, -339, 0, 0, 0, 0, -213, -360, 0, 0, 0, 0, 26, -368, 0, 0, 0, 0, 161, -339, 0, 0, 0, 0, 318, -268, 0, 0, 0, 0, 390, -172, 0, 0, 0, 0, 475, -33, 0, 0, 0, 0, 589, 32, 0, 0, 0, 0, 1145, 3)
+}
+point_count = 12
+
+[sub_resource type="Curve2D" id="Curve2D_dbqna"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1203, 210, 0, 0, 0, 0, -715, 138, 0, 0, 0, 0, -590, 110, 0, 0, 0, 0, -444, 113, 0, 0, 0, 0, -355, 71, 0, 0, 0, 0, -245, -33, 0, 0, 0, 0, -152, -33, 0, 0, 0, 0, -77, 64, 0, 0, 0, 0, -49, 146, 0, 0, 0, 0, 47, 156, 0, 0, 0, 0, 144, 74, 0, 0, 0, 0, 215, -22, 0, 0, 0, 0, 261, -33, 0, 0, 0, 0, 350, 14, 0, 0, 0, 0, 471, 56, 0, 0, 0, 0, 1181, 17)
+}
+point_count = 16
+
 [node name="Level_1" instance=ExtResource("1_kwbdo")]
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource("2_o8af1")
+
+[node name="Route" type="Path2D" parent="Routes" index="0"]
+curve = SubResource("Curve2D_uctco")
+
+[node name="Route_1" type="Path2D" parent="Routes" index="1"]
+curve = SubResource("Curve2D_c0vk6")
+
+[node name="Route_2" type="Path2D" parent="Routes" index="2"]
+curve = SubResource("Curve2D_dbqna")
 
 [node name="Camera2D" parent="." index="2"]
 zoom = Vector2(0.6, 0.6)
@@ -90,10 +117,7 @@ autostart = true
 [node name="FinnishLine" parent="." index="6" instance=ExtResource("3_vogp0")]
 position = Vector2(1114, 18)
 
-[node name="LevelTelebattiesAddUi" parent="." index="7"]
-visible = false
-
-[node name="Towers" type="Node2D" parent="." index="8"]
+[node name="Towers" type="Node2D" parent="." index="7"]
 
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
 [connection signal="TeleBatGotIn" from="FinnishLine" to="." method="_on_finnish_line_tele_bat_got_in"]
