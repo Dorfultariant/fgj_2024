@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bss6s2w1si3lf"]
 
 [ext_resource type="Script" path="res://scenes/towers/TowerObjectV2.gd" id="1_2hooc"]
-[ext_resource type="Texture2D" uid="uid://wwjog5tagyu8" path="res://resources/characters/PilkottuApina/UnFunyMonkeHandless.png" id="2_hv6re"]
-[ext_resource type="Texture2D" uid="uid://1sacyliijpl3" path="res://resources/characters/PilkottuApina/UnFunyMonkeRight.png" id="3_1ya4c"]
-[ext_resource type="Texture2D" uid="uid://dreuq1kyq0wn2" path="res://resources/characters/PilkottuApina/UnFunyMonkeLeftHand.png" id="4_5gmvn"]
+[ext_resource type="Texture2D" uid="uid://d2clhh8147vjp" path="res://resources/characters/PilkottuApina/UnFunyMonkeHandless.png" id="2_hv6re"]
+[ext_resource type="Texture2D" uid="uid://btsvipm8wwuyu" path="res://resources/characters/PilkottuApina/UnFunyMonkeLeftHand.png" id="4_5gmvn"]
+[ext_resource type="Texture2D" uid="uid://o4hcrmk8qajd" path="res://resources/characters/PilkottuApina/UnFunyMonkeRightHand.png" id="4_gfqtg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5ro"]
 size = Vector2(66, 137)
@@ -28,10 +28,10 @@ position = Vector2(38, -58)
 position = Vector2(38, 58)
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-texture = ExtResource("3_1ya4c")
+texture = ExtResource("4_5gmvn")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
-texture = ExtResource("4_5gmvn")
+texture = ExtResource("4_gfqtg")
 
 [node name="Area2D" type="Area2D" parent="."]
 
