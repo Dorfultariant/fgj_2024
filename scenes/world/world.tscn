@@ -13,4 +13,8 @@ script = ExtResource("1_2i7cf")
 
 [node name="TeleBatSpawnTimer" type="Timer" parent="."]
 
+[node name="TowerPositions" type="Node" parent="."]
+
+[node name="Towers" type="Node" parent="."]
+
 [connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]
