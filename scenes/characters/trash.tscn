@@ -9,7 +9,7 @@ size = Vector2(94, 141)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aogl"]
 size = Vector2(100, 145)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Trash" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
 collision_layer = 4
 script = ExtResource("1_fx1my")
