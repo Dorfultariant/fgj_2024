@@ -90,9 +90,6 @@ autostart = true
 [node name="FinnishLine" parent="." index="6" instance=ExtResource("3_vogp0")]
 position = Vector2(1114, 18)
 
-[node name="LevelTelebattiesAddUi" parent="." index="7"]
-visible = false
-
 [node name="Towers" type="Node2D" parent="." index="8"]
 
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
