@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0c7nsou6xec"]
+
+[ext_resource type="Texture2D" uid="uid://col5icq61fd3c" path="res://resources/characters/placeholder.png" id="1_go5my"]
+[ext_resource type="Script" path="res://scenes/UI/button.gd" id="2_5rvt5"]
+
+[node name="Control" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_go5my")
+script = ExtResource("2_5rvt5")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 150.0
+offset_right = 83.0
+offset_bottom = 173.0
+text = "RED"
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 136.0
+text = "COST"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
