@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://lbsvqgsigphu"]
+
+[ext_resource type="Texture2D" uid="uid://d3lk080srk4v3" path="res://resources/characters/UnFunyMonkeLVL1.png" id="1_7wrwm"]
+[ext_resource type="Script" path="res://scenes/towers/tower.gd" id="1_m731t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfevo"]
+
+[node name="Tower" type="Area2D"]
+script = ExtResource("1_m731t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7wrwm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(40, 40)
+shape = SubResource("CircleShape2D_xfevo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
