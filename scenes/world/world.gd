@@ -5,18 +5,30 @@ var telebatties_scene: PackedScene = preload("res://scenes/characters/telebattie
 var tower_scene: PackedScene = preload("res://scenes/towers/tower.tscn")
 var follow_paths_list = []
 var speed : int = 200
-#var tower_positions = $TowerPositions.get_children()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var tower = tower_scene.instantiate()
+	# Starting balances
+	Globals.ai_balance = Globals.ai_starting_balane
+	Globals.player_balance = Globals.player_starting_balance
+	var positionMarkers = $TowerPositions.get_children()
 	
-	tower.position = $TowerPositions/Marker2D.global_position
-	$Towers.add_child(tower)
-	for i in range(20):
-		var telebatties = telebatties_scene.instantiate()
-		telebatties.set_parameters(randi_range(0,5), randi_range(0,2))
-		Globals.telebatties_queue.append(telebatties)
+	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
+		var tower = tower_scene.instantiate()
+		var towerPos = positionMarkers[randi_range(0, positionMarkers.size())]
+		# Remove from possible tower positions so two towers dont stack
+		positionMarkers.erase(towerPos)
+		tower.position = towerPos.global_position
+		$Towers.add_child(tower)
+		Globals.tower_list.append(tower)
+		Globals.ai_balance -= Globals.tower_cost_list[0]
+
+	var TESTLIST = [0,2,1,5,2,2]
+	for i in TESTLIST:
+		if i != null:
+			var telebatties = telebatties_scene.instantiate()
+			telebatties.set_parameters(i, randi_range(0,2))
+			Globals.telebatties_queue.append(telebatties)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

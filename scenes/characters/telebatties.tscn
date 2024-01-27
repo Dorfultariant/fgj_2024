@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cedekayyep34s"]
 
-[ext_resource type="Script" path="res://scenes/towers/telebatties.gd" id="1_f2c4k"]
+[ext_resource type="Script" path="res://scenes/characters/telebatties.gd" id="1_f2c4k"]
 [ext_resource type="Texture2D" uid="uid://dp1a75ko2n6r0" path="res://resources/characters/telebatties.png" id="2_m6tpf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abwti"]

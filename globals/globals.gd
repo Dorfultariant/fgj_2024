@@ -10,9 +10,11 @@ enum TELEBATTIES {
 	NYAN	
 }
 
+var tower_list = []
 var telebatties_queue = Array()
 var instructiion_list = Array()
 var teleTypes: Array = [null,null,null,null,null,null]
+var tower_cost_list = [200]
 
 const player_starting_balance = 1000
 const ai_starting_balane = 1000
