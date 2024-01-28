@@ -43,7 +43,7 @@ func _process(delta):
 			var children = follower.get_children()
 			if self in children:
 				Globals.follow_paths_list.erase(follower)
-		print(Globals.teleTypes.erase(self))
+		Globals.teleTypes.erase(self)
 		queue_free()
 	
 func hit(amount):
