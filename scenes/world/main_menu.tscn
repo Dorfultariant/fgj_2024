@@ -6,38 +6,46 @@
 script/source = "extends Button
 
 func _on_pressed():
+	print(\"asd\")
 	Globals.current_level = 1
 	Globals.current_lap = 0
 	Globals.player_balance = Globals.player_starting_balance
 	Globals.ai_balance = Globals.ai_starting_balance
 	Globals.is_level_cleared = false
-	get_tree().root.add_child(preload(\"res://scenes/world/gameMenuUI.tscn\").instantiate())
-	queue_free()
+	get_tree().change_scene_to_file(\"res://scenes/world/gameMenuUI.tscn\")
 "
 
-[node name="main_menu" type="Node2D"]
+[node name="main_menu" type="CanvasLayer"]
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
 texture = ExtResource("1_t6mi3")
+expand_mode = 2
 
-[node name="start_button" type="Button" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -77.0
-offset_right = -84.0
-offset_bottom = -46.0
+offset_left = -28.0
+offset_top = -20.0
+offset_right = 28.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(5, 5)
+
+[node name="start_button" type="Button" parent="MarginContainer2"]
+layout_mode = 2
 action_mode = 0
 text = "START"
 script = SubResource("GDScript_ag78v")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
-
-[connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer2/start_button" to="MarginContainer2/start_button" method="_on_pressed"]
