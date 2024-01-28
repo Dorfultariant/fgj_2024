@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://iwjoehxuroqv"]
+[gd_scene load_steps=3 format=3 uid="uid://beupumyvufrcm"]
 
 [ext_resource type="Script" path="res://scenes/UI/start_meny.gd" id="1_dcauf"]
 [ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="1_rjhch"]

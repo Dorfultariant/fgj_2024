@@ -12,3 +12,5 @@ func _ready():
 
 func update_score_text():
 	score_label.text = str(Globals.player_score)
+
+
