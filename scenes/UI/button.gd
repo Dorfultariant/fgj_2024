@@ -13,3 +13,8 @@ func _process(delta):
 
 func _on_button_down():
 	print("PERKELE") # Replace with function body.
+
+
+func _on_pressed():
+	print("PERKELE")
+	pass # Replace with function body.

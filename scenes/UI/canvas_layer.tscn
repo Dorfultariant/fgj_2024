@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bil5nm1gfaoh7"]
+
+[ext_resource type="Script" path="res://scenes/UI/Panel.gd" id="1_u84vj"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.8, 4.68)
+script = ExtResource("1_u84vj")
+
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]

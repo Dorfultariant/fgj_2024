@@ -29,3 +29,4 @@ offset_bottom = 136.0
 text = "COST"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
