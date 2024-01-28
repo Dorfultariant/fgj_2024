@@ -5,6 +5,7 @@ var telebatties_scene: PackedScene = preload("res://scenes/characters/telebattie
 var tower_scene: PackedScene = preload("res://scenes/towers/tower.tscn")
 
 var speed : int = 500
+var can_die = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,7 +27,7 @@ func _ready():
 	for i in TESTLIST:
 		if i != null:
 			var telebatties = telebatties_scene.instantiate()
-			telebatties.set_parameters(i, $Routes.get_children().size())
+			telebatties.set_parameters(i, $Routes.get_children().size()-1)
 			Globals.telebatties_queue.append(telebatties)
 
 func _process(delta):
@@ -36,10 +37,10 @@ func _process(delta):
 			follower.progress += follower.get_child(0).speed * delta 
 	if Globals.player_score == Globals.player_level_clearance:
 		Globals.is_level_cleared = true
-		TransitionLayer.change_scene("res://scenes/world/gameMenuUI.tscn")
-	elif Globals.follow_paths_list.size() == 0:
+		TransitionLayer.change_scene("res://scenes/UI/shop_menu.tscn")
+	elif can_die && Globals.follow_paths_list.size() == 0:
 		Globals.is_level_cleared = false
-		TransitionLayer.change_scene("res://scenes/world/gameMenuUI.tscn")
+		TransitionLayer.change_scene("res://scenes/UI/shop_menu.tscn")
 
 func _on_telebatties_timer_timeout():
 	pass
@@ -52,6 +53,7 @@ func _on_tele_bat_spawn_timer_timeout():
 		var routes = $Routes.get_children()
 		routes[popped.path].add_child(newFollowPath)
 		Globals.follow_paths_list.append(newFollowPath)
+		can_die = true
 
 
 func _on_finnish_line_tele_bat_got_in(body):
