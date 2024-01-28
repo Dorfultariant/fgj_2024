@@ -22,7 +22,8 @@ var tower_list = []
 
 var telebatties_queue = Array()
 var instructiion_list = Array()
-var teleTypes: Array = [null,null,null,null,null,null]
+var teleTypes: Array = []
+const teleTypesMaxSize = 6
 var tower_cost_list = [200]
 
 var player_score = 0 : 
