@@ -27,6 +27,7 @@ extends CanvasLayer
 func _ready():
 	Globals.teleTypes = []
 	Globals.current_lap += 1
+	Globals.player_balance += Globals.player_balance_gained
 	if Globals.current_lap > Globals.number_of_laps:
 		TransitionLayer.change_scene("res://scenes/world/lose_screen.tscn")
 	elif Globals.is_level_cleared:

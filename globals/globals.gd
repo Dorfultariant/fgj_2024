@@ -37,7 +37,7 @@ var is_level_cleared : bool = false
 const player_starting_balance = 1000
 const ai_starting_balance = 1000
 const ai_balance_gained_per_telebattie_killed = 100
-const player_balance_gained = 50
+const player_balance_gained = 500
 
 var testLevel = 0
 
