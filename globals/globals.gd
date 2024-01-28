@@ -31,7 +31,7 @@ var player_score = 0 :
 		player_score = value
 		stat_update.emit()
 		
-const player_level_clearance : int = 10
+const player_level_clearance : int = 4
 var is_level_cleared : bool = false
 
 const player_starting_balance = 1000
