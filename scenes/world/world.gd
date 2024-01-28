@@ -11,8 +11,6 @@ var can_die
 func _ready():
 	can_die = false
 	var positionMarkers = $TowerPositions.get_children()
-	Globals.reset_ai()
-	Globals.reset_player()
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
 		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()-1)]
