@@ -12,7 +12,7 @@ func _on_pressed():
 	Globals.player_balance = Globals.player_starting_balance
 	Globals.ai_balance = Globals.ai_starting_balance
 	Globals.is_level_cleared = false
-	get_tree().change_scene_to_file(\"res://scenes/world/gameMenuUI.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/UI/shop_menu.tscn\")
 "
 
 [node name="main_menu" type="CanvasLayer"]

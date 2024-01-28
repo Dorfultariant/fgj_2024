@@ -25,7 +25,15 @@ extends CanvasLayer
 
 #var teletub_list = ["RED", "PURPLE", "BLUE", "YELLOW", "BROWN", "CYAN"]
 func _ready():
-	Globals.reset_player()
+	Globals.current_lap += 1
+	if Globals.current_lap > Globals.number_of_laps:
+		TransitionLayer.change_scene("res://scenes/world/lose_screen.tscn")
+	elif Globals.is_level_cleared:
+		Globals.is_level_cleared = false
+		Globals.current_level += 1
+		Globals.current_lap = 1
+		Globals.reset_player()
+		Globals.reset_ai()
 	
 	$MarginContainer4/Label.text = str(Globals.player_balance)
 	btn_1.text = Globals.teletub_list[0]
@@ -116,4 +124,4 @@ func _on_button_6_button_down():
 
 
 func _on_play_btn_button_down():
-	TransitionLayer.change_scene("res://scenes/world/level_1.tscn")
+	TransitionLayer.change_scene("res://scenes/world/level_"+str(Globals.current_level)+".tscn")
