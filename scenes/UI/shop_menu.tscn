@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch7bivgfbi83w"]
+[gd_scene load_steps=5 format=3 uid="uid://ch7bivgfbi83w"]
 
 [ext_resource type="Script" path="res://scenes/UI/shop_menu.gd" id="1_tp3bv"]
 [ext_resource type="Texture2D" uid="uid://266u3121nqes" path="res://resources/background/kisutausta.jpg" id="2_6klxs"]
+[ext_resource type="AudioStream" uid="uid://dmxcwmjdy0vhj" path="res://resources/sounds/VictorySound.mp3" id="3_x0cgq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lldff"]
 
@@ -164,6 +165,9 @@ text = "MONEY"
 label_settings = SubResource("LabelSettings_lldff")
 horizontal_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x0cgq")
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button2" to="." method="_on_button_2_button_down"]
