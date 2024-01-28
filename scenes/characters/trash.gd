@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 800.0
+const SPEED = 1200.0
 const ROTATE_SPEED = 1000
 
 var damage = 50
