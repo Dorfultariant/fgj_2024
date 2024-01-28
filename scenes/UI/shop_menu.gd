@@ -67,7 +67,7 @@ func _on_button_button_down():
 	if Globals.player_balance < Globals.teletub_cost_list[0] or Globals.teleTypes.size() == Globals.teleTypesMaxSize:
 		return
 	Globals.player_balance -= Globals.teletub_cost_list[0]
-	Globals.teleTypes[0] = 0
+	Globals.teleTypes.append(0)
 	#var rect = preload("res://resources/characters/telebattiesRED.png")
 	insert_to_queue(red)
 
@@ -75,7 +75,7 @@ func _on_button_2_button_down():
 	if Globals.player_balance < Globals.teletub_cost_list[1] or Globals.teleTypes.size() == Globals.teleTypesMaxSize:
 		return
 	Globals.player_balance -= Globals.teletub_cost_list[1]
-	Globals.teleTypes[0] = 1
+	Globals.teleTypes.append(1)
 	#var rect = preload("res://resources/characters/telebattiesBLUE.png")
 	insert_to_queue(purple)
 	
@@ -83,7 +83,7 @@ func _on_button_3_button_down():
 	if Globals.player_balance < Globals.teletub_cost_list[2] or Globals.teleTypes.size() == Globals.teleTypesMaxSize:
 		return
 	Globals.player_balance -= Globals.teletub_cost_list[2]
-	Globals.teleTypes[0] = 2
+	Globals.teleTypes.append(2)
 	
 	#var rect = preload("res://resources/characters/telebattiesGREEN.png")
 	insert_to_queue(green)
@@ -92,7 +92,7 @@ func _on_button_4_button_down():
 	if Globals.player_balance < Globals.teletub_cost_list[3] or Globals.teleTypes.size() == Globals.teleTypesMaxSize:
 		return
 	Globals.player_balance -= Globals.teletub_cost_list[3]
-	Globals.teleTypes[0] = 3
+	Globals.teleTypes.append(3)
 	
 	#var rect = preload("res://resources/characters/telebattiesLIGHTBLUE.png")
 	insert_to_queue(lightblue)
@@ -100,16 +100,17 @@ func _on_button_5_button_down():
 	if Globals.player_balance < Globals.teletub_cost_list[4] or Globals.teleTypes.size() == Globals.teleTypesMaxSize:
 		return
 	Globals.player_balance -= Globals.teletub_cost_list[4]
-	Globals.teleTypes[0] = 4
+	Globals.teleTypes.append(4)
 
 	#var rect = preload("res://resources/characters/telebattiesPINK.png")
 	insert_to_queue(pink)
+
 
 func _on_button_6_button_down():
 	if Globals.player_balance < Globals.teletub_cost_list[5] or Globals.teleTypes.size() == Globals.teleTypesMaxSize:
 		return
 	Globals.player_balance -= Globals.teletub_cost_list[5]
-	Globals.teleTypes[0] = 5
+	Globals.teleTypes.append(5)
 	#var rect = preload("res://resources/characters/telebattiesVIOLET.png")
 	insert_to_queue(blue)
 

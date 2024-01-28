@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch7bivgfbi83w"]
 
 [ext_resource type="Script" path="res://scenes/UI/shop_menu.gd" id="1_tp3bv"]
-[ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="2_mtgho"]
+[ext_resource type="Texture2D" uid="uid://266u3121nqes" path="res://resources/background/kisutausta.jpg" id="2_6klxs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lldff"]
 
@@ -16,9 +16,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer5"]
-modulate = Color(1, 1, 1, 0.529412)
+modulate = Color(1, 1, 1, 0.709804)
 layout_mode = 2
-texture = ExtResource("2_mtgho")
+texture = ExtResource("2_6klxs")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
