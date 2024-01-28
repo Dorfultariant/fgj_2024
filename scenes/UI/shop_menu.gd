@@ -25,6 +25,7 @@ extends CanvasLayer
 
 #var teletub_list = ["RED", "PURPLE", "BLUE", "YELLOW", "BROWN", "CYAN"]
 func _ready():
+	Globals.teleTypes = []
 	Globals.current_lap += 1
 	if Globals.current_lap > Globals.number_of_laps:
 		TransitionLayer.change_scene("res://scenes/world/lose_screen.tscn")

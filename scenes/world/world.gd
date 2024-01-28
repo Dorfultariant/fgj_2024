@@ -25,7 +25,7 @@ func _ready():
 	for i in Globals.teleTypes:
 		if i != null:
 			var telebatties = telebatties_scene.instantiate()
-			telebatties.set_parameters(i, $Routes.get_children().size()-1)
+			telebatties.set_parameters(i, randi_range(0,$Routes.get_children().size()-1))
 			Globals.telebatties_queue.append(telebatties)
 
 func _process(delta):
