@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://lbsvqgsigphu"]
+[gd_scene load_steps=26 format=3 uid="uid://lbsvqgsigphu"]
 
 [ext_resource type="Script" path="res://scenes/towers/tower.gd" id="1_qbe5b"]
 [ext_resource type="Texture2D" uid="uid://d2clhh8147vjp" path="res://resources/characters/PilkottuApina/UnFunyMonkeHandless.png" id="2_2lum8"]
 [ext_resource type="Texture2D" uid="uid://btsvipm8wwuyu" path="res://resources/characters/PilkottuApina/UnFunyMonkeLeftHand.png" id="3_nuvee"]
 [ext_resource type="Texture2D" uid="uid://o4hcrmk8qajd" path="res://resources/characters/PilkottuApina/UnFunyMonkeRightHand.png" id="4_8qjj0"]
+[ext_resource type="Script" path="res://scenes/towers/AudioManager.gd" id="5_bp4qh"]
 [ext_resource type="AudioStream" uid="uid://uh33gw8j0cc6" path="res://resources/sounds/tolk1.mp3" id="5_njfrd"]
 [ext_resource type="AudioStream" uid="uid://mwomypc0o2us" path="res://resources/sounds/tolk2.mp3" id="6_1h36t"]
 [ext_resource type="AudioStream" uid="uid://f8q3vwg7lwsx" path="res://resources/sounds/tolk11.mp3" id="7_0nlft"]
@@ -99,6 +100,9 @@ position = Vector2(72, 59)
 stream = SubResource("AudioStreamRandomizer_dsr38")
 volume_db = -0.2
 pitch_scale = 1.09
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("5_bp4qh")
 
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="." method="_on_death_zone_body_exited"]
