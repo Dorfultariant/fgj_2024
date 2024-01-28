@@ -37,6 +37,16 @@ func add_item():
 	dropdown_menu2.add_item("6. slot")
 	
 func _ready():
+	Globals.current_lap += 1
+	if Globals.current_lap > Globals.number_of_laps:
+		get_tree().root.add_child(preload("res://scenes/world/lose_screen.tscn").instantiate())
+		queue_free()
+	elif Globals.is_level_cleared:
+		Globals.is_level_cleared = false
+		Globals.current_level += 1
+		Globals.current_lap = 1
+		Globals.player_balance = Globals.player_starting_balance
+		Globals.ai_balance = Globals.ai_starting_balance
 	money_textEdit.text = str(Globals.player_balance)
 	add_item()
 

@@ -8,9 +8,6 @@ var speed : int = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Starting balances
-	Globals.ai_balance = Globals.ai_starting_balance
-	Globals.player_balance = Globals.player_starting_balance
 	var positionMarkers = $TowerPositions.get_children()
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
@@ -36,6 +33,11 @@ func _process(delta):
 		follower.progress += follower.get_child(0).speed * delta 
 	if Globals.player_score == Globals.player_level_clearance:
 		Globals.is_level_cleared = true
+		get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
+		queue_free()
+	elif Globals.follow_paths_list.size() == 0:
+		get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
+		queue_free()
 
 func _on_telebatties_timer_timeout():
 	pass

@@ -10,7 +10,7 @@ enum TELEBATTIES {
 	NYAN	
 }
 
-var preloaded_levels: Array = [preload("res://scenes/world/gameMenuUI.tscn").instantiate(),preload("res://scenes/world/level_1.tscn").instantiate(),preload("res://scenes/world/level_2.tscn").instantiate(),preload("res://scenes/world/level_3.tscn").instantiate(),preload("res://scenes/world/level_4.tscn").instantiate(),]
+var preloaded_levels: Array = [preload("res://scenes/world/level_1.tscn").instantiate(),preload("res://scenes/world/level_2.tscn").instantiate(),preload("res://scenes/world/level_3.tscn").instantiate(),preload("res://scenes/world/level_4.tscn").instantiate(),]
 
 var follow_paths_list = []
 var tower_list = []
@@ -43,50 +43,5 @@ var player_is_alive = true
 
 var ready_for_wave = false
 
-func level_manager():
-	player_is_alive = true
-	ready_for_wave = false
-	current_level = 1
-	current_lap = 1
-	player_balance = player_starting_balance
-	ai_balance = ai_starting_balance
-	se
-	while player_is_alive && current_level <= number_of_levels:
-		while player_is_alive && current_lap <= number_of_laps:
-			store_menu()
-			while !ready_for_wave:
-				pass
-			wave_begin()
-			while !is_level_cleared:
-				pass
-			is_level_cleared = false
-			ready_for_wave = false
-			update_player_alive()
-			if !player_is_alive:
-				player_lost()
-			current_lap += 1
-		current_level += 1
-		current_lap = 1
-	if !player_is_alive:
-		player_lost()
-	player_won()
-			
 
-func store_menu():
-	get_tree().root.add_child(preloaded_levels[0])
-
-func wave_begin():
-	get_tree().root.add_child(preloaded_levels[current_level])
-	
-func update_player_alive():
-		player_is_alive = false
-		for n in teleTypes:
-			if n != null:
-				player_is_alive = true
-
-func player_lost():
-	get_tree().root.add_child(preload("res://scenes/world/lose_screen.tscn").instantiate())
-	
-func player_won():
-	pass
 
