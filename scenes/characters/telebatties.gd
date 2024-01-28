@@ -12,19 +12,19 @@ func set_parameters(new_type, new_path):
 	$Sprite2D.frame = type
 	path = new_path
 	if type == 0:
-		health = 100
+		health = 200
 		speed = 250
 		cost = 100
 	elif type == 1:
-		health = 200
+		health = 300
 		speed = 150
 		cost = 120
 	elif type == 2:
-		health = 60
+		health = 120
 		speed = 500
 		cost = 200
 	elif type == 3:
-		health = 100
+		health = 300
 		speed = 350
 		cost = 150
 	elif type == 4:
@@ -32,7 +32,7 @@ func set_parameters(new_type, new_path):
 		speed = 200
 		cost = 300
 	elif type == 5:
-		health = 160
+		health = 260
 		speed = 175
 		cost = 140
 		
@@ -43,7 +43,7 @@ func _process(delta):
 			var children = follower.get_children()
 			if self in children:
 				Globals.follow_paths_list.erase(follower)
-		Globals.teleTypes.erase(self)
+		print(Globals.teleTypes.erase(self))
 		queue_free()
 	
 func hit(amount):
