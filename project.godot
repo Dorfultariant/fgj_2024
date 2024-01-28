@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2d_anti_td"
-run/main_scene="res://scenes/UI/start_meny.tscn"
+run/main_scene="res://scenes/world/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
