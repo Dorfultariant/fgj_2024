@@ -5,10 +5,11 @@ var telebatties_scene: PackedScene = preload("res://scenes/characters/telebattie
 var tower_scene: PackedScene = preload("res://scenes/towers/tower.tscn")
 
 var speed : int = 500
-var can_die = false
+var can_die
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	can_die = false
 	var positionMarkers = $TowerPositions.get_children()
 	Globals.reset_ai()
 	Globals.reset_player()
@@ -23,8 +24,7 @@ func _ready():
 		Globals.tower_list.append(tower)
 		Globals.ai_balance -= Globals.tower_cost_list[0]
 
-	var TESTLIST = [0,2,1,5,2,2]
-	for i in TESTLIST:
+	for i in Globals.teleTypes:
 		if i != null:
 			var telebatties = telebatties_scene.instantiate()
 			telebatties.set_parameters(i, $Routes.get_children().size()-1)
@@ -46,7 +46,6 @@ func _on_telebatties_timer_timeout():
 	pass
 	
 func _on_tele_bat_spawn_timer_timeout():
-	
 	if Globals.telebatties_queue:
 		var newFollowPath = PathFollow2D.new()
 		var popped = Globals.telebatties_queue.pop_at(0)

@@ -124,4 +124,5 @@ func _on_button_6_button_down():
 
 
 func _on_play_btn_button_down():
-	TransitionLayer.change_scene("res://scenes/world/level_"+str(Globals.current_level)+".tscn")
+	if Globals.teleTypes.size() > 0:
+		TransitionLayer.change_scene("res://scenes/world/level_"+str(Globals.current_level)+".tscn")
