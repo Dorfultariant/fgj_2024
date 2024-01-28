@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://3cr3vfabnfyf"]
+
+[ext_resource type="Script" path="res://scenes/cutscenes/StartCutscene.gd" id="1_3rjk4"]
+[ext_resource type="VideoStream" path="res://resources/funi videos/FGJ2024.ogv" id="1_3440k"]
+
+[node name="StartCutscene" type="Node2D"]
+script = ExtResource("1_3rjk4")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_3440k")
+volume_db = -2.91
+autoplay = true

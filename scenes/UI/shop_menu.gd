@@ -30,6 +30,7 @@ func _ready():
 	if Globals.current_lap > Globals.number_of_laps:
 		TransitionLayer.change_scene("res://scenes/world/lose_screen.tscn")
 	elif Globals.is_level_cleared:
+		$AudioStreamPlayer.play()
 		Globals.is_level_cleared = false
 		Globals.current_level += 1
 		Globals.current_lap = 1
