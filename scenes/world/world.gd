@@ -36,6 +36,11 @@ func _process(delta):
 		follower.progress += follower.get_child(0).speed * delta 
 	if Globals.player_score == Globals.player_level_clearance:
 		Globals.is_level_cleared = true
+		get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
+		queue_free()
+	elif Globals.follow_paths_list.size() == 0:
+		get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
+		queue_free()
 
 func _on_telebatties_timer_timeout():
 	pass
