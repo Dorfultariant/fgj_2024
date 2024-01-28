@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8vy1iq4itgyi"]
 
-[ext_resource type="Texture2D" uid="uid://col5icq61fd3c" path="res://resources/characters/placeholder.png" id="1_4b30n"]
 [ext_resource type="Script" path="res://scenes/UI/score_view.gd" id="1_08483"]
+[ext_resource type="Texture2D" uid="uid://j6d04hvmnjxl" path="res://resources/characters/nappivanukasta.png" id="2_4cf5t"]
 
 [node name="ScoreView" type="CanvasLayer"]
 script = ExtResource("1_08483")
@@ -28,6 +28,6 @@ horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Score/HBoxContainer/Score"]
 layout_mode = 2
-texture = ExtResource("1_4b30n")
+texture = ExtResource("2_4cf5t")
 expand_mode = 4
 stretch_mode = 5

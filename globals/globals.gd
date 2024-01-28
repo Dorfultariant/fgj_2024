@@ -10,7 +10,7 @@ enum TELEBATTIES {
 	NYAN	
 }
 
-var teletub_list = ["RED", "PURPLE", "BLUE", "YELLOW", "BROWN", "CYAN"]
+var teletub_list = ["RED", "PURPLE", "GREEN", "LIGHT", "PINK", "BLUE"]
 var teletub_cost_list = [100, 200, 400, 600, 800, 1000]
 
 signal stat_update

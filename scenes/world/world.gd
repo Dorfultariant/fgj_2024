@@ -11,9 +11,10 @@ var can_die
 func _ready():
 	can_die = false
 	var positionMarkers = $TowerPositions.get_children()
+	print("Ready already")
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
-		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()+1)-1]
+		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()-1)]
 		
 		# Remove from possible tower positions so two towers dont stack
 		positionMarkers.erase(towerPos)
@@ -33,7 +34,7 @@ func _process(delta):
 		#print("Mach speed: ",follower.get_child(0).speed)
 		if follower != null:
 			follower.progress += follower.get_child(0).speed * delta 
-	if Globals.player_score == Globals.player_level_clearance:
+	if Globals.player_score >= Globals.player_level_clearance:
 		Globals.is_level_cleared = true
 		TransitionLayer.change_scene("res://scenes/UI/shop_menu.tscn")
 	elif can_die && Globals.follow_paths_list.size() == 0:
