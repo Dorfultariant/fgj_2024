@@ -45,7 +45,15 @@ zoom = Vector2(0.6, 0.6)
 wait_time = 0.4
 autostart = true
 
-[node name="TowerPositions" type="Node2D" parent="." index="4"]
+[node name="TowerPositions2" type="Node2D" parent="." index="4"]
+
+[node name="TeleBatSpawnTimer" parent="." index="5"]
+autostart = true
+
+[node name="FinnishLine" parent="." index="6" instance=ExtResource("3_x06cc")]
+position = Vector2(1017, 42)
+
+[node name="Towers2" type="Node2D" parent="." index="7"]
 
 [node name="Marker2D" type="Marker2D" parent="TowerPositions" index="0"]
 position = Vector2(-848, 76)
@@ -112,14 +120,6 @@ position = Vector2(506, -215)
 
 [node name="Marker2D22" type="Marker2D" parent="TowerPositions" index="21"]
 position = Vector2(755, 189)
-
-[node name="TeleBatSpawnTimer" parent="." index="5"]
-autostart = true
-
-[node name="FinnishLine" parent="." index="6" instance=ExtResource("3_x06cc")]
-position = Vector2(1017, 42)
-
-[node name="Towers" type="Node2D" parent="." index="7"]
 
 [connection signal="timeout" from="TelebattiesTimer" to="." method="_on_telebatties_timer_timeout"]
 [connection signal="TeleBatGotIn" from="FinnishLine" to="." method="_on_finnish_line_tele_bat_got_in"]

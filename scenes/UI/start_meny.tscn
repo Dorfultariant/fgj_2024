@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://iwjoehxuroqv"]
+
+[ext_resource type="Script" path="res://scenes/UI/start_meny.gd" id="1_dcauf"]
+[ext_resource type="Texture2D" uid="uid://kr3pd3uabibd" path="res://resources/background/anti_td_test_bg_1.png" id="1_rjhch"]
+
+[node name="StartMeny" type="CanvasLayer"]
+script = ExtResource("1_dcauf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_rjhch")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="MarginContainer2"]
+layout_mode = 2
+text = "START"
+
+[connection signal="button_down" from="MarginContainer2/Button" to="." method="_on_button_button_down"]

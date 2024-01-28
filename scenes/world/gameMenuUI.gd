@@ -97,7 +97,7 @@ func _on_button_pressed():
 			Globals.player_balance -= cost
 		Globals.teleTypes[selected_spot-1] = prices_to_int[cost]
 	money_textEdit.text = str(Globals.player_balance)
-			
+
 	#var new_rect = TextureRect.new()
 	#new_rect.texture = rect.texture
 	#$ColorRect/ItemList.add_child(new_rect)

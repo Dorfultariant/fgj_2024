@@ -10,6 +10,9 @@ enum TELEBATTIES {
 	NYAN	
 }
 
+var teletub_list = ["RED", "PURPLE", "BLUE", "YELLOW", "BROWN", "CYAN"]
+var teletub_cost_list = [100, 200, 400, 600, 800, 1000]
+
 signal stat_update
 
 var preloaded_levels: Array = [preload("res://scenes/world/level_1.tscn").instantiate(),preload("res://scenes/world/level_2.tscn").instantiate(),preload("res://scenes/world/level_3.tscn").instantiate(),preload("res://scenes/world/level_4.tscn").instantiate(),]

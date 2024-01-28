@@ -1,0 +1,160 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccoom3gsv1t7f"]
+
+[ext_resource type="Script" path="res://scenes/UI/shop_menu.gd" id="1_tp3bv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lldff"]
+
+[node name="ShopMenu" type="CanvasLayer"]
+script = ExtResource("1_tp3bv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_direction = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_bottom = 206.0
+grow_horizontal = 0
+scale = Vector2(0.97833, 1.00319)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ButtonBar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Button5" type="Button" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="MarginContainer/HBoxContainer/ButtonBar"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Queue" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Queue2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Queue3" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Queue4" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Queue5" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Queue6" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -20.0
+offset_right = 23.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayBtn" type="Button" parent="MarginContainer3"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="MarginContainer4"]
+layout_mode = 2
+text = "MONEY"
+label_settings = SubResource("LabelSettings_lldff")
+horizontal_alignment = 1
+uppercase = true
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button3" to="." method="_on_button_3_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button4" to="." method="_on_button_4_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button5" to="." method="_on_button_5_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/ButtonBar/Button6" to="." method="_on_button_6_button_down"]
+[connection signal="button_down" from="MarginContainer3/PlayBtn" to="." method="_on_play_btn_button_down"]
