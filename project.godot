@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Globals="*res://globals/globals.gd"
 TransitionLayer="*res://globals/transition_layer.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
