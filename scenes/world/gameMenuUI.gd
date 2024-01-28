@@ -51,9 +51,6 @@ func _ready():
 	add_item()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_option_button_item_selected(index):
