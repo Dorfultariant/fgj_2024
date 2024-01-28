@@ -46,6 +46,7 @@ func _on_telebatties_timer_timeout():
 	pass
 	
 func _on_tele_bat_spawn_timer_timeout():
+	
 	if Globals.telebatties_queue:
 		var newFollowPath = PathFollow2D.new()
 		var popped = Globals.telebatties_queue.pop_at(0)
