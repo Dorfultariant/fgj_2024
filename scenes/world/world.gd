@@ -9,6 +9,8 @@ var speed : int = 500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var positionMarkers = $TowerPositions.get_children()
+	Globals.reset_ai()
+	Globals.reset_player()
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
 		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()-1)]
@@ -30,18 +32,21 @@ func _ready():
 func _process(delta):
 	for follower in Globals.follow_paths_list:
 		#print("Mach speed: ",follower.get_child(0).speed)
-		follower.progress += follower.get_child(0).speed * delta 
-	if Globals.player_score == Globals.player_level_clearance:
-		Globals.is_level_cleared = true
-		get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
-		queue_free()
-	elif Globals.follow_paths_list.size() == 0:
-		get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
-		queue_free()
+		if follower != null:
+			follower.progress += follower.get_child(0).speed * delta 
+	if Globals.player_score == 1: # Globals.player_level_clearance
+		# Transition to target scene
+		TransitionLayer.change_scene("res://scenes/world/level_2.tscn")
+		#Globals.is_level_cleared = true
+		#get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
+		#queue_free()
+	#elif Globals.follow_paths_list.size() == 0:
+		#get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
+		#queue_free()
 
 func _on_telebatties_timer_timeout():
 	pass
-
+	
 func _on_tele_bat_spawn_timer_timeout():
 	if Globals.telebatties_queue:
 		var newFollowPath = PathFollow2D.new()

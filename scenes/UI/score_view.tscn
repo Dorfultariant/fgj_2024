@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://8vy1iq4itgyi"]
+
+[ext_resource type="Texture2D" uid="uid://col5icq61fd3c" path="res://resources/characters/placeholder.png" id="1_4b30n"]
+[ext_resource type="Script" path="res://scenes/UI/score_view.gd" id="1_08483"]
+
+[node name="ScoreView" type="CanvasLayer"]
+script = ExtResource("1_08483")
+
+[node name="Score" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Score"]
+layout_mode = 2
+
+[node name="Score" type="VBoxContainer" parent="Score/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Score/HBoxContainer/Score"]
+layout_mode = 2
+text = "6"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Score/HBoxContainer/Score"]
+layout_mode = 2
+texture = ExtResource("1_4b30n")
+expand_mode = 4
+stretch_mode = 5
