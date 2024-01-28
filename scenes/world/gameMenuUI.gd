@@ -45,8 +45,8 @@ func _ready():
 		Globals.is_level_cleared = false
 		Globals.current_level += 1
 		Globals.current_lap = 1
-		Globals.player_balance = Globals.player_starting_balance
-		Globals.ai_balance = Globals.ai_starting_balance
+		Globals.reset_ai()
+		Globals.reset_player()
 	money_textEdit.text = str(Globals.player_balance)
 	add_item()
 

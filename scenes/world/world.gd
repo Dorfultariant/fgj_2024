@@ -26,7 +26,7 @@ func _ready():
 	for i in TESTLIST:
 		if i != null:
 			var telebatties = telebatties_scene.instantiate()
-			telebatties.set_parameters(i, randi_range(0,2))
+			telebatties.set_parameters(i, $Routes.get_children().size())
 			Globals.telebatties_queue.append(telebatties)
 
 func _process(delta):
@@ -34,15 +34,12 @@ func _process(delta):
 		#print("Mach speed: ",follower.get_child(0).speed)
 		if follower != null:
 			follower.progress += follower.get_child(0).speed * delta 
-	if Globals.player_score == 1: # Globals.player_level_clearance
-		# Transition to target scene
-		TransitionLayer.change_scene("res://scenes/world/level_2.tscn")
-		#Globals.is_level_cleared = true
-		#get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
-		#queue_free()
-	#elif Globals.follow_paths_list.size() == 0:
-		#get_tree().root.add_child(preload("res://scenes/world/gameMenuUI.tscn").instantiate())
-		#queue_free()
+	if Globals.player_score == Globals.player_level_clearance:
+		Globals.is_level_cleared = true
+		TransitionLayer.change_scene("res://scenes/world/gameMenuUI.tscn")
+	elif Globals.follow_paths_list.size() == 0:
+		Globals.is_level_cleared = false
+		TransitionLayer.change_scene("res://scenes/world/gameMenuUI.tscn")
 
 func _on_telebatties_timer_timeout():
 	pass
