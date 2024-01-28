@@ -54,7 +54,31 @@ var ready_for_wave = false
 
 func reset_ai():
 	ai_balance = ai_starting_balance
+<<<<<<< Updated upstream
 	tower_list = []
+=======
+	
+	while player_is_alive && current_level <= number_of_levels:
+		while player_is_alive && current_lap <= number_of_laps:
+			store_menu()
+			while !ready_for_wave:
+				pass
+			wave_begin()
+			while !is_level_cleared:
+				pass
+			is_level_cleared = false
+			ready_for_wave = false
+			update_player_alive()
+			if !player_is_alive:
+				player_lost()
+			current_lap += 1
+		current_level += 1
+		current_lap = 1
+	if !player_is_alive:
+		player_lost()
+	player_won()
+			
+>>>>>>> Stashed changes
 
 func reset_player():
 	player_balance = player_starting_balance
