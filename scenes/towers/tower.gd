@@ -5,6 +5,7 @@ var damage = 50
 const RELOADTIME = 1.2
 var loadTime = RELOADTIME
 var trashScene = preload("res://scenes/characters/trash.tscn")
+@onready var audioStreamPlayer = $AudioStreamPlayer
 
 
 func _process(delta):
@@ -31,6 +32,8 @@ func throwTrash():
 		trash.direction = (target_body.global_position - $MarkerLeftHand.global_position).normalized()
 	trash.damage = damage
 	get_node("AmmunitionHolder").add_child(trash)
+	
+	audioStreamPlayer.play()
 
 
 func _on_death_zone_body_entered(body):
