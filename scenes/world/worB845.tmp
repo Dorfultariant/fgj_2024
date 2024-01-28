@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn4hqehqchtlc"]
+
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="1_2i7cf"]
+[ext_resource type="PackedScene" uid="uid://8vy1iq4itgyi" path="res://scenes/UI/score_view.tscn" id="2_iov1j"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_2i7cf")
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Routes" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TeleBatSpawnTimer" type="Timer" parent="."]
+
+[node name="TowerPositions" type="Node" parent="."]
+
+[node name="Towers" type="Node" parent="."]
+
+[node name="ScoreView" parent="." instance=ExtResource("2_iov1j")]
+
+[connection signal="timeout" from="TeleBatSpawnTimer" to="." method="_on_tele_bat_spawn_timer_timeout"]

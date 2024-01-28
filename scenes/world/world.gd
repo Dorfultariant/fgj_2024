@@ -13,7 +13,7 @@ func _ready():
 	var positionMarkers = $TowerPositions.get_children()
 	while (Globals.ai_balance >= Globals.tower_cost_list[0]):
 		var tower = tower_scene.instantiate()
-		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()-1)]
+		var towerPos = positionMarkers[randi_range(0, positionMarkers.size()+1)-1]
 		
 		# Remove from possible tower positions so two towers dont stack
 		positionMarkers.erase(towerPos)
